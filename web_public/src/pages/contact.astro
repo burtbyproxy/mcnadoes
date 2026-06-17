@@ -1,0 +1,375 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="General Correspondence" description="McNadoes General Correspondence Application — Form MC-2 (Rev. 7).">
+
+  <section class="bg-navy-bg text-white py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Form MC-2 · Revision 7 · General Correspondence</div>
+      <h1 class="text-3xl font-bold mb-3">General Correspondence Application</h1>
+      <p class="text-mist/60 text-sm font-mono max-w-2xl">
+        McNadoes does not have a general contact email. We have this form. Complete all required fields. The form does not autosave. If you are here about a hardship or emergency, <a href="/hardship" class="text-gold hover:text-gold-light underline">you want Form MC-7</a>.
+      </p>
+    </div>
+  </section>
+
+  <div class="bg-gold/10 border-b border-gold/30">
+    <div class="max-w-5xl mx-auto px-6 py-3 text-xs font-mono text-navy/70">
+      McNadoes is currently fully committed through Q4 2027. This form is for correspondence only. Submitting a project inquiry through a correspondence form does not constitute a project inquiry.
+    </div>
+  </div>
+
+  <section class="py-12 bg-offwhite">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="md:col-span-2">
+          <form id="contact-form" class="space-y-8 bg-white border border-mist p-8 rounded-sm" novalidate>
+
+            <!-- Section 1 -->
+            <div>
+              <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-5">Section 1 — Correspondent Identification</h2>
+              <div class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="field-label">First Name *</label>
+                    <input id="f-firstname" type="text" class="field" />
+                  </div>
+                  <div>
+                    <label class="field-label">Last Name *</label>
+                    <input id="f-lastname" type="text" class="field" />
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="field-label">Organization *</label>
+                    <input id="f-org" type="text" class="field" />
+                  </div>
+                  <div>
+                    <label class="field-label">NAICS Industry Code *</label>
+                    <input id="f-naics" type="text" maxlength="6" placeholder="6-digit code" class="field" />
+                    <p class="hint">Available at census.gov/naics. If you do not know your NAICS code, determine it before proceeding.</p>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="field-label">Email Address *</label>
+                    <input id="f-email" type="email" class="field" />
+                  </div>
+                  <div>
+                    <label class="field-label">Phone Number *</label>
+                    <input id="f-phone" type="tel" placeholder="(###) ###-####" class="field" />
+                    <p class="hint">Format: (###) ###-####. Other formats are not accepted.</p>
+                  </div>
+                </div>
+                <div>
+                  <label class="field-label">D-U-N-S Number (if applicable)</label>
+                  <input id="f-duns" type="text" placeholder="9-digit D&B identifier" class="field" />
+                  <p class="hint">Required for all organizations with more than 12 employees. Leave blank only if your organization has 12 or fewer employees.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div>
+              <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-5">Section 2 — Geographic Eligibility</h2>
+              <div class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="field-label">State of Operation *</label>
+                    <select id="f-state" class="field">
+                      <option value="">Select state</option>
+                      {["Kansas","Oklahoma","Nebraska","Missouri","Iowa","Texas","South Dakota","Other — see note below"].map(s => (
+                        <option>{s}</option>
+                      ))}
+                    </select>
+                    <p class="hint">If you selected "Other," your inquiry may not receive a response. McNadoes operates in seven states. Your state may not be one of them.</p>
+                  </div>
+                  <div>
+                    <label class="field-label">Approximate Distance from Wichita, KS (miles) *</label>
+                    <input id="f-distance" type="number" min="0" max="9999" placeholder="0" class="field" />
+                    <p class="hint">McNadoes does not serve locations more than 800 miles from Wichita. Estimates within 50 miles are acceptable.</p>
+                  </div>
+                </div>
+                <div>
+                  <label class="field-label">Have you personally witnessed a tornado? *</label>
+                  <div class="flex gap-6 mt-2">
+                    <label class="flex items-center gap-2 text-sm text-navy cursor-pointer">
+                      <input type="radio" id="f-tornado-yes" name="tornado-witness" value="yes" class="accent-blue" /> Yes
+                    </label>
+                    <label class="flex items-center gap-2 text-sm text-navy cursor-pointer">
+                      <input type="radio" id="f-tornado-no" name="tornado-witness" value="no" class="accent-blue" /> No
+                    </label>
+                  </div>
+                  <p class="hint mt-2">This does not affect eligibility. We ask because it is useful context. Answering "No" does not disqualify you. It does, however, give Steve something to work with.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div>
+              <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-5">Section 3 — Nature of Correspondence</h2>
+              <div class="space-y-4">
+                <div>
+                  <label class="field-label">Correspondence Type *</label>
+                  <select id="f-type" class="field">
+                    <option value="">Select type</option>
+                    <option>General Inquiry</option>
+                    <option>Media Request</option>
+                    <option>Academic or Research Inquiry</option>
+                    <option>Government or Regulatory Inquiry</option>
+                    <option>Existing Client — Non-Emergency</option>
+                    <option>Vendor or Partnership Inquiry</option>
+                    <option>Other</option>
+                    <option>I am not sure what category this is</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="field-label">How did you learn about McNadoes? *</label>
+                  <select id="f-referral" class="field">
+                    <option value="">Select one</option>
+                    <option>I saw the tornado</option>
+                    <option>A county commissioner mentioned it, reluctantly</option>
+                    <option>Word of mouth — agriculture sector</option>
+                    <option>Word of mouth — municipal government</option>
+                    <option>News coverage</option>
+                    <option>Academic citation</option>
+                    <option>Referral from existing McNadoes client</option>
+                    <option>Internet search</option>
+                    <option>Someone bet me this wasn't real</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="field-label">Message *</label>
+                  <textarea id="f-message" rows="5" class="field resize-none" placeholder="State your inquiry clearly and completely. Vague correspondence receives vague responses, if any."></textarea>
+                  <div class="flex justify-between mt-1">
+                    <p class="hint">Minimum 50 words.</p>
+                    <span id="word-count" class="text-xs font-mono text-steel/50">0 words</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div>
+              <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-5">Section 4 — Qualification Questions</h2>
+              <div class="space-y-4">
+                <div>
+                  <label class="field-label">
+                    What is the approximate maximum wind speed of an EF-2 tornado, in miles per hour? *
+                  </label>
+                  <input id="f-ef2" type="number" placeholder="mph" class="field" />
+                  <p class="hint">Round to the nearest 5 mph. This is not a trick question. It is a baseline competency check. The answer is publicly available.</p>
+                </div>
+                <div>
+                  <label class="field-label">
+                    Are you currently involved in litigation with, or on behalf of, any atmospheric event? *
+                  </label>
+                  <div class="flex gap-6 mt-2">
+                    <label class="flex items-center gap-2 text-sm text-navy cursor-pointer">
+                      <input type="radio" id="f-lit-no" name="litigation" value="no" class="accent-blue" /> No
+                    </label>
+                    <label class="flex items-center gap-2 text-sm text-navy cursor-pointer">
+                      <input type="radio" id="f-lit-yes" name="litigation" value="yes" class="accent-blue" /> Yes — see Attachment H
+                    </label>
+                  </div>
+                  <p class="hint mt-2">If yes, attach documentation as Attachment H. There is no attachment functionality on this form. Mail it.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Attestation -->
+            <div>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input id="f-attest" type="checkbox" class="mt-0.5 accent-blue flex-shrink-0" />
+                <span class="text-xs text-steel leading-relaxed">
+                  I confirm that I am submitting this form because I have a genuine, good-faith reason to correspond with McNadoes Corporation, and not because I think a tornado services company is funny and I want to see what happens. I understand that Steve McKay has seen this form many times and can usually tell.
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full py-4 bg-navy text-white font-bold hover:bg-navy-bg transition-colors rounded-sm flex items-center justify-center gap-2">
+              <span id="btn-label">Submit Form MC-2</span>
+              <svg id="btn-spinner" class="hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+              </svg>
+            </button>
+
+            <div id="error-msg" class="hidden p-4 bg-danger/5 border border-danger/20 rounded-sm">
+              <p class="text-danger text-sm font-mono font-bold mb-2">This submission was not accepted. Please address the following:</p>
+              <ul id="error-list" class="text-danger/80 text-xs font-mono space-y-1 list-disc list-inside"></ul>
+            </div>
+
+            <div id="success-msg" class="hidden p-6 bg-blue/5 border border-blue/20 rounded-sm text-center">
+              <p class="text-navy font-bold mb-2">Form MC-2 Received.</p>
+              <p class="text-steel text-sm font-mono leading-relaxed max-w-md mx-auto">
+                Your correspondence has been logged. Response times vary. "Vary" means anywhere from three business days to never, depending on the nature of the inquiry and current operational load. You will not receive a status update. If you need to know whether we received it: we did. This message is how you know.
+              </p>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <div class="bg-white border border-mist p-6 rounded-sm">
+            <div class="text-xs font-mono text-blue/70 tracking-widest uppercase mb-4">Before You Write</div>
+            <ul class="space-y-3 text-xs font-mono text-steel/70 leading-relaxed">
+              {[
+                "If you are an existing client, contact your account representative. Do not use this form.",
+                "If you have a hardship or emergency, use Form MC-7. This is not that form.",
+                "If you are a journalist, select 'Media Request' and be specific. 'Can I interview Steve about the tornadoes' is not specific.",
+                "If you are calling to verify this company is real: it is. Steve is real. The tornadoes are real.",
+                "If your question is answered on this website, we will tell you that. Read the website first.",
+              ].map(item => (
+                <li class="flex gap-2 items-start">
+                  <span class="text-gold mt-0.5 flex-shrink-0">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div id="support" class="bg-navy text-white p-6 rounded-sm">
+            <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Response Policy</div>
+            <div class="space-y-3 text-xs font-mono text-mist/60 leading-relaxed">
+              <p>McNadoes responds to correspondence in the order received, with the following exceptions:</p>
+              <ul class="space-y-2 list-disc list-inside">
+                <li>Existing client inquiries are prioritized.</li>
+                <li>Government and regulatory inquiries are prioritized.</li>
+                <li>Inquiries that begin with "Quick question —" are deprioritized.</li>
+                <li>Inquiries containing the phrase "go viral" are not responded to.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  @reference "../styles/global.css";
+  .field {
+    @apply w-full px-4 py-3 border border-mist bg-offwhite text-navy text-sm rounded-sm focus:outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-colors font-mono;
+  }
+  .field-label {
+    @apply block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2;
+  }
+  .hint {
+    @apply text-xs text-steel/50 font-mono mt-1 leading-relaxed;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnLabel = document.getElementById('btn-label') as HTMLSpanElement;
+  const spinner = document.getElementById('btn-spinner') as SVGSVGElement;
+  const errorMsg = document.getElementById('error-msg') as HTMLDivElement;
+  const errorList = document.getElementById('error-list') as HTMLUListElement;
+  const successMsg = document.getElementById('success-msg') as HTMLDivElement;
+
+  const messageArea = document.getElementById('f-message') as HTMLTextAreaElement;
+  const wordCountEl = document.getElementById('word-count') as HTMLSpanElement;
+
+  messageArea.addEventListener('input', () => {
+    const words = messageArea.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+    wordCountEl.textContent = `${words} word${words !== 1 ? 's' : ''}`;
+    wordCountEl.className = `text-xs font-mono ${words >= 50 ? 'text-blue' : 'text-danger/60'}`;
+  });
+
+  const rules: Array<{ check: () => boolean; message: string }> = [
+    {
+      check: () => (document.getElementById('f-firstname') as HTMLInputElement).value.trim().length > 0,
+      message: 'Section 1: First name is required.'
+    },
+    {
+      check: () => (document.getElementById('f-lastname') as HTMLInputElement).value.trim().length > 0,
+      message: 'Section 1: Last name is required.'
+    },
+    {
+      check: () => /^\d{6}$/.test((document.getElementById('f-naics') as HTMLInputElement).value.trim()),
+      message: 'Section 1: NAICS code must be exactly 6 digits. Locate yours at census.gov/naics before proceeding.'
+    },
+    {
+      check: () => /^\(\d{3}\) \d{3}-\d{4}$/.test((document.getElementById('f-phone') as HTMLInputElement).value.trim()),
+      message: 'Section 1: Phone number must be in (###) ###-#### format. This format was specified. It was not a suggestion.'
+    },
+    {
+      check: () => {
+        const dist = parseFloat((document.getElementById('f-distance') as HTMLInputElement).value);
+        return !isNaN(dist) && dist <= 800;
+      },
+      message: 'Section 2: Your location exceeds the 800-mile service radius from Wichita, KS. McNadoes cannot assist you at this time.'
+    },
+    {
+      check: () => {
+        const radios = document.querySelectorAll('input[name="tornado-witness"]') as NodeListOf<HTMLInputElement>;
+        return Array.from(radios).some(r => r.checked);
+      },
+      message: 'Section 2: You must indicate whether you have personally witnessed a tornado.'
+    },
+    {
+      check: () => {
+        const words = messageArea.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+        return words >= 50;
+      },
+      message: 'Section 3: Message must be at least 50 words. If you cannot write 50 words about your inquiry, your inquiry may not be sufficiently developed.'
+    },
+    {
+      check: () => (document.getElementById('f-referral') as HTMLSelectElement).value !== '',
+      message: 'Section 3: You must indicate how you learned about McNadoes.'
+    },
+    {
+      check: () => {
+        const val = parseInt((document.getElementById('f-ef2') as HTMLInputElement).value);
+        return val >= 110 && val <= 140;
+      },
+      message: 'Section 4: EF-2 maximum wind speed is between 110–135 mph. Round to the nearest 5. This information is publicly available and was not expected to require this note.'
+    },
+    {
+      check: () => {
+        const radios = document.querySelectorAll('input[name="litigation"]') as NodeListOf<HTMLInputElement>;
+        return Array.from(radios).some(r => r.checked);
+      },
+      message: 'Section 4: You must indicate your litigation status regarding atmospheric events.'
+    },
+    {
+      check: () => (document.getElementById('f-attest') as HTMLInputElement).checked,
+      message: 'Attestation: You must confirm you are submitting this form in good faith. Steve can tell.'
+    },
+  ];
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    errorMsg.classList.add('hidden');
+    errorList.innerHTML = '';
+
+    const failures = rules.filter(r => !r.check());
+
+    if (failures.length > 0) {
+      failures.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f.message;
+        errorList.appendChild(li);
+      });
+      errorMsg.classList.remove('hidden');
+      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return;
+    }
+
+    btnLabel.textContent = 'Transmitting...';
+    spinner.classList.remove('hidden');
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+    }, 2000);
+  });
+</script>

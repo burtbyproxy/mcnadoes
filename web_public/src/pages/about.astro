@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About McNadoes | Steve McKay, Founder"
+  description="Steve McKay is a 20-year IBM veteran, IBM Call for Code winner, and the architect of the world's first AI-automated emergency alert system. He founded McNadoes Corporation in 2019. The tornadoes comply."
+>
+
+  <!-- Header -->
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Company History</div>
+      <h1 class="text-4xl font-bold mb-4">About McNadoes</h1>
+      <p class="text-mist/70 max-w-2xl">
+        A brief history of how a 20-year IBM veteran came to found a tornado services company and why it is going better than anyone expected.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-2 space-y-6 text-steel leading-relaxed">
+          <h2 class="text-2xl font-bold text-navy">The Origin</h2>
+          <p>
+            McNadoes was founded in 2019 on a premise that required some explanation at the time: tornadoes are among the most powerful force-delivery systems on earth, and no one was managing them as a resource. The question was not whether this was possible. The question was why it hadn't been done.
+          </p>
+          <p>
+            The answer took four years of AI model development, three regulatory consultations, one FAA variance application, and a pilot program with Sedgwick County, Kansas. The pilot completed on time and within scope. Sedgwick County described the experience as "not what we expected, but exactly what we asked for." We have not heard a better description of the service since.
+          </p>
+
+          <!-- Reporters photo inline -->
+          <div class="my-8">
+            <div class="aspect-square w-full max-w-sm overflow-hidden rounded-sm border border-mist">
+              <img
+                src="/images/photos/steve-reporters-tornado.jpg"
+                alt="Steve McKay speaking with reporters during a McNadoes demonstration"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <p class="text-xs font-mono text-steel/50 mt-2">McKay addresses media following the Sedgwick County pilot, 2021.</p>
+          </div>
+
+          <p>
+            McNadoes now operates across seven states with 47 employees, 847 completed deployments, and active contracts across municipal, agricultural, and commercial sectors. The premise has held.
+          </p>
+
+          <h2 class="text-2xl font-bold text-navy mt-8">The Platform</h2>
+          <p>
+            The McNadoes atmospheric guidance platform integrates real-time NOAA data feeds, terrain modeling, and a reinforcement learning model trained on seventeen years of tornado path data. Deployment guidance is produced with sub-kilometer accuracy. The system determines classification, approach vector, and dwell time. The tornado receives the instruction. It complies.
+          </p>
+
+          <!-- Desk / storm tracker photo -->
+          <div class="my-8">
+            <div class="aspect-square w-full max-w-sm overflow-hidden rounded-sm border border-mist">
+              <img
+                src="/images/photos/steve-desk-stormtracker.jpg"
+                alt="Steve McKay at his desk monitoring active storm systems"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <p class="text-xs font-mono text-steel/50 mt-2">McNadoes operations center, Wichita. System uptime: 99.4%.</p>
+          </div>
+
+          <p>
+            "We command the tornado," CEO Steve McKay has said. "It goes where we tell it. It does what we need it to do. It stops when we say stop. I understand that people find this surprising. I found it surprising the first time too. It still works."
+          </p>
+
+          <h2 class="text-2xl font-bold text-navy mt-8" id="leadership">Leadership</h2>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <div class="bg-offwhite border border-mist p-6 rounded-sm">
+            <div class="text-xs font-mono text-blue/70 tracking-widest uppercase mb-4">Company Facts</div>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-steel">Founded</span>
+                <span class="font-mono font-semibold text-navy">2019</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-steel">Headquarters</span>
+                <span class="font-mono font-semibold text-navy">Wichita, KS</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-steel">Employees</span>
+                <span class="font-mono font-semibold text-navy">47</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-steel">States Active</span>
+                <span class="font-mono font-semibold text-navy">7</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-steel">Deployments</span>
+                <span class="font-mono font-semibold text-navy">847+</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-steel">Certifications</span>
+                <span class="font-mono font-semibold text-navy text-right text-xs">ISO 9001, FAA, NOAA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-navy text-white p-6 rounded-sm">
+            <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Operational Coverage</div>
+            <div class="space-y-1 text-sm font-mono text-mist/70">
+              <div>Kansas</div>
+              <div>Oklahoma</div>
+              <div>Nebraska</div>
+              <div>Missouri</div>
+              <div>Iowa</div>
+              <div>Texas (North)</div>
+              <div>South Dakota</div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 text-xs text-mist/40 font-mono">
+              Coverage contingent on atmospheric conditions. McNadoes does not guarantee tornado availability. This is not a thing we can control.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership card -->
+      <div class="mt-12 bg-offwhite border border-mist p-8 rounded-sm">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="w-48 h-48 flex-shrink-0 overflow-hidden rounded-sm border border-mist">
+            <img
+              src="/images/photos/steve-desk-stormtracker.jpg"
+              alt="Steve McKay, Founder & CEO"
+              class="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-navy">Steve McKay</h3>
+            <div class="text-xs font-mono text-blue/70 tracking-widest uppercase mt-1 mb-4">Founder, CEO & Chief Atmospheric Officer</div>
+            <p class="text-steel text-sm leading-relaxed max-w-2xl">
+              Steve McKay spent 20 years at IBM, holds US patents in cognitive security, and won the IBM Call for Code. He holds a B.S. in Computer Science and an M.S. in Computer Information Systems. He has personally logged over 400 tornado intercepts, which he considers a reasonable number. He founded McNadoes Corporation in 2019.
+            </p>
+            <p class="text-steel text-sm leading-relaxed max-w-2xl mt-3">
+              McKay describes his management philosophy as "IBM discipline applied to atmospheric chaos, which sounds like a contradiction and is." On at least one occasion he has attempted to pursue an active tornado on foot. He has not commented on this.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Florida alert system -->
+      <div class="mt-10 bg-offwhite border border-mist p-8 rounded-sm">
+        <div class="text-xs font-mono text-blue/70 tracking-widest uppercase mb-5">Prior Work · Florida Emergency Management · 2025</div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-2 space-y-4 text-steel text-sm leading-relaxed">
+            <h3 class="text-xl font-bold text-navy">The World's First AI-Automated Emergency Alert System</h3>
+            <p>
+              Before McNadoes, Steve McKay designed and architected what is believed to be the first fully AI-automated emergency alert system built to operational government specification. McKay designed the platform. His engineering partner built it to spec. The system was deployed in 2025 across the state of Florida, monitoring atmospheric conditions in real time and issuing emergency alerts without human intervention delay.
+            </p>
+            <p>
+              During the year the system was operational, the state of Florida experienced zero property damage from severe weather emergencies. The table to the right shows what every other recent year looked like. We will let you draw your own conclusions about the comparison.
+            </p>
+            <p>
+              The state of Florida reviewed the record — one year of operation, zero property damage, zero emergencies — and canceled the contract. The stated reason was that they did not need it.
+            </p>
+            <p>
+              McKay has not commented extensively on this. When asked, he said: "The data is what it is. I know what the data means. I'll leave it at that." He then returned to work.
+            </p>
+            <p class="text-steel/60 text-xs font-mono pt-2 border-t border-mist">
+              McNadoes does not offer emergency alert systems as a service. We mention this because it is relevant to understanding who designed the AI platform that now commands tornadoes, and because we believe the record should exist somewhere.
+            </p>
+            <div class="bg-gold/10 border border-gold/30 p-4 rounded-sm text-xs font-mono text-navy/70 leading-relaxed">
+              Source: NOAA NCEI Billion-Dollar Weather and Climate Disasters. 2025 figure reflects zero recorded property damage events during system operation. We have no further comment on this.
+            </div>
+            <a href="/ai-powered-emergency-alert-system" class="inline-block mt-2 text-blue text-sm font-mono hover:text-blue-light transition-colors">
+              Read the full record →
+            </a>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-navy text-white p-5 rounded-sm">
+              <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Florida Storm Damage · By Year</div>
+              <div class="space-y-2">
+                {[
+                  ["2018", "$31.2B", "Hurricane Michael", false],
+                  ["2019", "$2.0B", "Hurricane Dorian", false],
+                  ["2020", "$20.0B+", "Sally, Isaias, others", false],
+                  ["2021", "$88.0B+", "Ida, Fred, Elsa, Nicholas", false],
+                  ["2022", "$120.7B", "Hurricane Ian + Nicole", false],
+                  ["2023", "$3.6B+", "Hurricane Idalia", false],
+                  ["2024", "$50–100B", "Milton ($34B), Helene, others", false],
+                  ["2025", "$0", "McKay system operational", true],
+                ].map(([year, cost, note, highlight]) => (
+                  <div class={`flex items-center justify-between text-xs py-1.5 border-b border-white/5 ${highlight ? 'text-gold' : 'text-mist/70'}`}>
+                    <span class="font-mono w-10 flex-shrink-0">{year}</span>
+                    <span class={`font-mono font-bold w-20 text-right flex-shrink-0 ${highlight ? 'text-gold' : 'text-white'}`}>{cost}</span>
+                    <span class="text-right ml-3 opacity-60 text-xs">{note}</span>
+                  </div>
+                ))}
+              </div>
+              <div class="mt-4 pt-3 text-xs font-mono leading-relaxed">
+                <span class="text-danger/80">2026:</span> <span class="text-mist/40">System defunded. Reason: "We don't need it."</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 speaking photo — full width editorial -->
+      <div class="mt-10">
+        <div class="grid md:grid-cols-2 gap-8 items-center bg-navy text-white p-8 rounded-sm">
+          <div class="aspect-square overflow-hidden rounded-sm border border-white/10">
+            <img
+              src="/images/photos/steve-speaking-q3.jpg"
+              alt="Steve McKay presenting the McNadoes Q3 operational review"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Q3 Operational Review · 2024</div>
+            <h3 class="text-2xl font-bold mb-4">We Present Our Numbers Because They Hold Up</h3>
+            <p class="text-mist/70 text-sm leading-relaxed">
+              McNadoes publishes quarterly operational reports covering deployment accuracy, client satisfaction scores, atmospheric modeling performance, and an updated count of things we declined to do. We have found that transparency, in this industry, is not common. We find that surprising.
+            </p>
+            <a href="/contact" class="inline-block mt-6 text-gold text-sm font-mono hover:text-gold-light transition-colors">
+              Request our latest operational report →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-offwhite border-t border-mist py-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold text-navy">Interested in working with McNadoes?</p>
+        <p class="text-steel text-sm mt-1">We review all project inquiries. Most of them are legitimate.</p>
+      </div>
+      <a href="/contact" class="px-8 py-3 bg-blue text-white font-bold hover:bg-blue-light transition-colors rounded-sm flex-shrink-0">
+        Submit a Project Inquiry
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

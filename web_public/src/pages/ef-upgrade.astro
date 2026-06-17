@@ -1,0 +1,299 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="EF Classification Upgrade Request | Form MC-6"
+  description="McNadoes Corporation Form MC-6 — EF Classification Upgrade Request. For clients requiring a higher tornado classification than originally contracted. Subject to 14-business-day lead time and rate adjustment."
+  canonicalPath="/ef-upgrade"
+>
+
+  <section class="bg-navy-bg text-white py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Form MC-6 · Revision 2 · EF Classification Upgrade</div>
+      <h1 class="text-3xl font-bold mb-3">EF Classification Upgrade Request</h1>
+      <p class="text-mist/60 text-sm font-mono max-w-3xl">
+        Complete this form if your project scope has expanded beyond the capabilities of your originally contracted EF classification. Upgrade requests require a minimum of 14 business days lead time before the scheduled deployment date. Requests submitted within 14 business days will not be processed in time. This is not an exception we make.
+      </p>
+    </div>
+  </section>
+
+  <div class="bg-gold/10 border-b border-gold/30">
+    <div class="max-w-5xl mx-auto px-6 py-4 text-xs font-mono text-navy/70">
+      EF SCALE REFERENCE: EF-0 (65–85 mph) · EF-1 (86–110 mph) · EF-2 (111–135 mph) · EF-3 (136–165 mph) · EF-4/5 not available through standard intake. Do not ask.
+    </div>
+  </div>
+
+  <section class="bg-offwhite py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <form id="mc6-form" novalidate class="space-y-10">
+
+        <!-- Section 1 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 1 — Contract Reference</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="field-label">Original Contract Reference Number</label>
+              <input id="f-ref" type="text" class="field" placeholder="MCN-YYYY-XXXXXX" />
+              <p class="hint">Format: MCN-YYYY-XXXXXX.</p>
+            </div>
+            <div>
+              <label class="field-label">Scheduled Deployment Date</label>
+              <input id="f-deploy-date" type="date" class="field" />
+              <p class="hint">Must be at least 14 business days from today. We will check.</p>
+            </div>
+            <div>
+              <label class="field-label">Currently Contracted EF Classification</label>
+              <select id="f-current-ef" class="field">
+                <option value="">— Select your current classification —</option>
+                <option value="0">EF-0 (65–85 mph)</option>
+                <option value="1">EF-1 (86–110 mph)</option>
+                <option value="2">EF-2 (111–135 mph)</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label">Requested EF Classification</label>
+              <select id="f-requested-ef" class="field">
+                <option value="">— Select requested classification —</option>
+                <option value="1">EF-1 (86–110 mph)</option>
+                <option value="2">EF-2 (111–135 mph)</option>
+                <option value="3">EF-3 (136–165 mph)</option>
+              </select>
+              <p class="hint">Must be higher than your current classification. EF-3 upgrades require additional review and are not guaranteed.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 2 — Scope Justification</h2>
+          <div class="space-y-6">
+            <div>
+              <label class="field-label">Why is your original EF classification no longer sufficient?</label>
+              <textarea id="f-justification" rows="6" class="field" placeholder="Describe the specific scope changes, site conditions, or project requirements that necessitate a higher EF classification. Be specific about what the original classification cannot accomplish..."></textarea>
+              <div class="flex justify-between mt-1">
+                <p class="hint">Minimum 100 words. "It's not enough" does not meet the minimum standard.</p>
+                <span id="just-count" class="text-xs font-mono text-danger/60">0 words</span>
+              </div>
+            </div>
+            <div>
+              <label class="field-label">Describe specifically what the upgraded classification will accomplish that the original cannot</label>
+              <textarea id="f-delta" rows="5" class="field" placeholder="What specifically changes at the higher wind speed? What is the targeted outcome that requires EF-[requested] rather than EF-[current]?"></textarea>
+              <div class="flex justify-between mt-1">
+                <p class="hint">Minimum 75 words. Vague answers are returned without review.</p>
+                <span id="delta-count" class="text-xs font-mono text-danger/60">0 words</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 3 — Updated Site Requirements</h2>
+          <p class="text-xs font-mono text-steel/60 mb-5">Higher EF classifications require expanded exclusion zones and updated safety documentation. Confirm each item has been addressed.</p>
+          <div class="space-y-4">
+            {[
+              ["site-plan", "I have submitted a revised site plan to my McNadoes account representative reflecting the upgraded deployment parameters."],
+              ["excl-zone", "I have updated the exclusion zone to meet the requirements for my requested classification. (EF-1: 300 ft · EF-2: 500 ft · EF-3: 750 ft or as specified)"],
+              ["adj-notify", "I have re-issued adjacent property notifications reflecting the updated EF classification and revised exclusion zone."],
+              ["utility", "I have confirmed updated utility clearances with the relevant authorities for the upgraded wind speed parameters."],
+            ].map(([id, text]) => (
+              <label class="flex gap-3 items-start cursor-pointer">
+                <input type="checkbox" id={id} class="mt-0.5 accent-blue flex-shrink-0" />
+                <span class="text-sm text-steel leading-relaxed">{text}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- Section 4 — Rate adjustment + the field -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 4 — Rate Adjustment Acknowledgment</h2>
+          <div class="space-y-6">
+            <div class="bg-white border border-mist p-5 rounded-sm">
+              <p class="text-xs font-mono text-steel/70 leading-relaxed">
+                EF classification upgrades are subject to a rate adjustment reflecting the increased operational complexity, atmospheric modeling requirements, and liability exposure associated with higher wind speed deployments. Your McNadoes account representative will provide a revised rate prior to deployment confirmation. You must accept the revised rate before this request can be processed.
+              </p>
+            </div>
+            <div>
+              <label class="field-label">To confirm you accept the revised rate, type exactly: <span class="text-blue">I accept the revised rate</span></label>
+              <input id="f-rate-confirm" type="text" class="field" placeholder="I accept the revised rate" />
+            </div>
+            <div>
+              <label class="field-label">To confirm you understand the scope of this request, type exactly: <span class="text-blue">I understand the difference between more and enough</span></label>
+              <input id="f-understand" type="text" class="field" placeholder="I understand the difference between more and enough" />
+              <p class="hint">This field is required. We added it after the third EF-3 escalation in a single quarter.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5 — Declarations -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 5 — Required Declarations</h2>
+          <div class="space-y-4">
+            {[
+              ["decl-1", "I understand that EF classification upgrades are not guaranteed and remain subject to atmospheric availability and McNadoes operational capacity at the time of deployment."],
+              ["decl-2", "I understand that an EF-3 deployment produces outcomes materially different in scale from an EF-2 deployment, and that I have communicated this to all relevant parties on my team."],
+              ["decl-3", "I confirm that the expanded exclusion zone has been established and will be enforced on the day of deployment, and that I am responsible for enforcing it."],
+              ["decl-4", "I understand that submitting this form does not confirm the upgrade. Confirmation requires approval from McNadoes operations and acceptance of the revised rate."],
+              ["decl-5", "I have not already submitted a duplicate of this form. If I have, I understand that submitting duplicate requests does not accelerate processing and may result in both being deprioritized."],
+            ].map(([id, text]) => (
+              <label class="flex gap-3 items-start cursor-pointer">
+                <input type="checkbox" id={id} class="mt-0.5 accent-blue flex-shrink-0" />
+                <span class="text-sm text-steel leading-relaxed">{text}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- Error / Success -->
+        <div id="error-msg" class="hidden bg-danger/5 border border-danger/20 rounded-sm p-5">
+          <p class="text-xs font-mono font-bold text-danger mb-2">Form MC-6 cannot be submitted. The following items require correction:</p>
+          <ul id="error-list" class="text-xs font-mono text-danger/80 space-y-1 list-disc list-inside"></ul>
+        </div>
+
+        <div id="success-msg" class="hidden bg-white border border-mist rounded-sm p-8 text-center">
+          <div class="text-xs font-mono text-blue/60 uppercase tracking-widest mb-3">Request Received</div>
+          <p class="font-bold text-navy text-lg mb-2">Form MC-6 is under review.</p>
+          <p class="text-sm text-steel font-mono max-w-lg mx-auto leading-relaxed">Your EF classification upgrade request has been received. Your account representative will be in touch with a revised rate within 5–7 business days. The upgrade is not confirmed until you receive written confirmation and accept the revised rate. Do not proceed with site preparation for the higher classification until confirmation is received.</p>
+        </div>
+
+        <div class="flex gap-4">
+          <button
+            type="submit"
+            id="submit-btn"
+            class="px-8 py-4 bg-navy text-white font-bold text-sm hover:bg-navy-bg transition-colors rounded-sm flex items-center gap-2"
+          >
+            <span id="btn-label">Submit Upgrade Request</span>
+            <svg id="btn-spinner" class="hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+            </svg>
+          </button>
+          <p class="text-xs font-mono text-steel/50 self-center">Lead time: 14 business days minimum. Not negotiable.</p>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  @reference "../styles/global.css";
+  .field {
+    @apply w-full px-4 py-3 border border-mist bg-white text-navy text-sm rounded-sm focus:outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-colors font-mono;
+  }
+  .field-label {
+    @apply block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2;
+  }
+  .hint {
+    @apply text-xs text-steel/50 font-mono mt-1 leading-relaxed;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('mc6-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnLabel = document.getElementById('btn-label') as HTMLSpanElement;
+  const spinner = document.getElementById('btn-spinner') as SVGSVGElement;
+  const errorMsg = document.getElementById('error-msg') as HTMLDivElement;
+  const errorList = document.getElementById('error-list') as HTMLUListElement;
+  const successMsg = document.getElementById('success-msg') as HTMLDivElement;
+
+  const justArea = document.getElementById('f-justification') as HTMLTextAreaElement;
+  const justCount = document.getElementById('just-count') as HTMLSpanElement;
+  const deltaArea = document.getElementById('f-delta') as HTMLTextAreaElement;
+  const deltaCount = document.getElementById('delta-count') as HTMLSpanElement;
+
+  const countWords = (s: string) => s.trim().split(/\s+/).filter(w => w.length > 0).length;
+
+  justArea.addEventListener('input', () => {
+    const n = countWords(justArea.value);
+    justCount.textContent = `${n} words`;
+    justCount.className = `text-xs font-mono ${n >= 100 ? 'text-blue' : 'text-danger/60'}`;
+  });
+  deltaArea.addEventListener('input', () => {
+    const n = countWords(deltaArea.value);
+    deltaCount.textContent = `${n} words`;
+    deltaCount.className = `text-xs font-mono ${n >= 75 ? 'text-blue' : 'text-danger/60'}`;
+  });
+
+  const rules: Array<{check: () => boolean; message: string}> = [
+    {
+      check: () => /^MCN-\d{4}-\w{6}$/.test((document.getElementById('f-ref') as HTMLInputElement).value.trim()),
+      message: 'Section 1: Contract reference number must be in format MCN-YYYY-XXXXXX.'
+    },
+    {
+      check: () => {
+        const d = (document.getElementById('f-deploy-date') as HTMLInputElement).value;
+        if (!d) return false;
+        const deploy = new Date(d);
+        const today = new Date();
+        const diff = (deploy.getTime() - today.getTime()) / (1000 * 60 * 60 * 24);
+        return diff >= 14;
+      },
+      message: 'Section 1: Deployment date must be at least 14 business days from today. This requirement is not flexible.'
+    },
+    {
+      check: () => {
+        const cur = parseInt((document.getElementById('f-current-ef') as HTMLSelectElement).value);
+        const req = parseInt((document.getElementById('f-requested-ef') as HTMLSelectElement).value);
+        return !isNaN(cur) && !isNaN(req) && req > cur;
+      },
+      message: 'Section 1: Requested EF classification must be higher than your current contracted classification. This form is for upgrades only.'
+    },
+    {
+      check: () => countWords(justArea.value) >= 100,
+      message: 'Section 2: Scope justification must be at least 100 words.'
+    },
+    {
+      check: () => countWords(deltaArea.value) >= 75,
+      message: 'Section 2: Classification delta description must be at least 75 words.'
+    },
+    ...['site-plan','excl-zone','adj-notify','utility'].map((id, i) => ({
+      check: () => (document.getElementById(id) as HTMLInputElement).checked,
+      message: `Section 3: Updated site requirement ${i + 1} must be confirmed.`
+    })),
+    {
+      check: () => (document.getElementById('f-rate-confirm') as HTMLInputElement).value.trim() === 'I accept the revised rate',
+      message: 'Section 4: You must type "I accept the revised rate" exactly as shown.'
+    },
+    {
+      check: () => (document.getElementById('f-understand') as HTMLInputElement).value.trim() === 'I understand the difference between more and enough',
+      message: 'Section 4: You must type "I understand the difference between more and enough" exactly as shown.'
+    },
+    ...['decl-1','decl-2','decl-3','decl-4','decl-5'].map((id, i) => ({
+      check: () => (document.getElementById(id) as HTMLInputElement).checked,
+      message: `Section 5: Declaration ${i + 1} must be acknowledged.`
+    }))
+  ];
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    errorMsg.classList.add('hidden');
+    errorList.innerHTML = '';
+
+    const failures = rules.filter(r => !r.check());
+    if (failures.length > 0) {
+      failures.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f.message;
+        errorList.appendChild(li);
+      });
+      errorMsg.classList.remove('hidden');
+      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return;
+    }
+
+    btnLabel.textContent = 'Submitting request...';
+    spinner.classList.remove('hidden');
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 2000);
+  });
+</script>

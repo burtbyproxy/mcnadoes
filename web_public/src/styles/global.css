@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — sourced directly from logo files */
+  --color-navy:       #1a2d5c;   /* wordmark dark navy */
+  --color-navy-bg:    #1a365d;   /* logo background navy */
+  --color-navy-light: #274880;   /* hover/active navy */
+  --color-blue:       #4a90c8;   /* tornado swirl light blue */
+  --color-blue-light: #6aaed8;   /* blue hover */
+  --color-gold:       #f5a500;   /* "CORPORATION" gold */
+  --color-gold-light: #ffc235;   /* gold hover */
+  --color-steel:      #4a5568;
+  --color-mist:       #e4eaf2;
+  --color-offwhite:   #f4f6f9;
+  --color-white:      #ffffff;
+  --color-danger:     #da1e28;
+
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-navy);
+    background: var(--color-white);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: var(--color-blue);
+  }
+
+  a:hover {
+    color: var(--color-blue-light);
+  }
+}

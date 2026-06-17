@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Agricultural Services | McNadoes Tornado Services"
+  description="McNadoes agricultural tornado services for Kansas, Oklahoma, and Nebraska farming operations. Field clearing, irrigation channel prep, seasonal scheduling. Seventeen county ag departments on file."
+  canonicalPath="/services/agricultural"
+>
+
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Services / Agricultural</div>
+      <h1 class="text-4xl font-bold mb-4">Agricultural Services</h1>
+      <p class="text-mist/70 max-w-2xl leading-relaxed">
+        Seasonal land management for farming operations. McNadoes agricultural services are designed for the realities of large-acreage midwest farming: tight seasonal windows, economics that don't support conventional equipment for every task, and a general preference for getting things done efficiently so the rest of the season can proceed on schedule.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-blue text-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {[
+        ["17", "County Ag Depts on File"],
+        ["3", "States of Coverage"],
+        ["100%", "Seasonal Scheduling"],
+        ["0", "Cattle Contracts (policy)"],
+      ].map(([stat, label]) => (
+        <div>
+          <div class="text-2xl font-bold text-gold">{stat}</div>
+          <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">{label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-offwhite py-16">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-5 text-steel leading-relaxed">
+        <h2 class="text-2xl font-bold text-navy">What We Do</h2>
+        <p>
+          McNadoes agricultural services cover a range of seasonal land management tasks that either require equipment time that most operations can't justify, or benefit from the kind of efficiency that only an atmospheric event can deliver. We have active contracts with seventeen county agricultural departments across Kansas, Oklahoma, and Nebraska. They have found this works. We agree.
+        </p>
+        <p>
+          Field turning assistance, irrigation channel clearing, windbreak removal, and targeted crop rotation support are the core of our agricultural service catalog. These are not complicated applications. We tell the tornado what to do. It does it. The field is ready. The season proceeds.
+        </p>
+        <p>
+          Seasonal scheduling is a genuine constraint for this service line. We prioritize agricultural contracts during the atmospheric windows that make sense for this work. If you are calling us in July about a pre-planting field clearing, we will have a direct conversation about your timeline expectations and what we can reasonably commit to.
+        </p>
+
+        <h2 class="text-2xl font-bold text-navy pt-4">Agricultural Applications</h2>
+        <ul class="space-y-2">
+          {[
+            "Pre-season field clearing and turning",
+            "Crop residue and stubble removal",
+            "Irrigation channel and drainage ditch clearing",
+            "Windbreak and tree line removal",
+            "Cover crop termination (large acreage)",
+            "Post-harvest bulk material relocation (see also: Atmospheric Logistics)",
+            "County land management contracts",
+          ].map(item => (
+            <li class="flex gap-3">
+              <span class="text-gold mt-1 flex-shrink-0">✓</span>
+              <span class="text-sm">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="bg-gold/10 border border-gold/30 p-5 rounded-sm mt-4">
+          <div class="text-xs font-mono text-navy/60 uppercase tracking-wide mb-2">Livestock Policy</div>
+          <p class="text-sm text-navy/80">
+            McNadoes does not accept contracts that involve livestock in any capacity — as cargo, as clearance obstacles, or as anything else. We understand the math that some clients have proposed. The cattle do not consent to this arrangement, and our insurance carrier has been very clear about where they stand on the subject. Please review our <a href="/will-not" class="text-blue hover:text-blue-light">use policy</a> before submitting a livestock-adjacent inquiry.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        <div class="bg-navy text-white p-5 rounded-sm">
+          <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Service Specifications</div>
+          <div class="space-y-3 text-xs">
+            {[
+              ["Coverage states", "KS, OK, NE (primary)"],
+              ["Acreage", "No stated maximum"],
+              ["Scheduling", "Seasonally optimized"],
+              ["County contracts", "Available"],
+              ["References", "17 departments"],
+              ["Livestock", "Not applicable (policy)"],
+            ].map(([label, value]) => (
+              <div class="flex justify-between gap-4">
+                <span class="text-mist/50 font-mono">{label}</span>
+                <span class="text-mist font-mono text-right">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <a href="/contact" class="block bg-blue text-white text-center py-3 px-5 font-bold hover:bg-blue-light transition-colors rounded-sm text-sm">
+          Submit a Project Inquiry
+        </a>
+        <a href="/services/municipal-contracts" class="block bg-white border border-mist text-navy text-center py-3 px-5 font-semibold hover:border-blue/30 transition-colors rounded-sm text-sm">
+          County Contract Information →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy text-white py-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold">View the full service catalog.</p>
+        <p class="text-mist/60 text-sm mt-1">Six core service lines across municipal, commercial, and agricultural applications.</p>
+      </div>
+      <a href="/services" class="px-6 py-3 border border-gold text-gold font-bold hover:bg-gold hover:text-navy transition-colors rounded-sm flex-shrink-0 text-sm">
+        All Services →
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

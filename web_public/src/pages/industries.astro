@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const industries = [
+  {
+    title: "Agriculture",
+    icon: "🌾",
+    desc: "Large-acreage midwest farming operations use McNadoes for pre-season field clearing, crop residue removal, irrigation channel prep, and windbreak clearing. Seasonal scheduling is a genuine operational constraint and we work around it. Seventeen county agricultural departments have contracted with us and will describe the experience as effective.",
+    services: ["Field clearing & turning", "Crop residue removal", "Irrigation channel clearing", "Windbreak removal"],
+    link: "/services/agricultural",
+  },
+  {
+    title: "Construction",
+    icon: "🏗",
+    desc: "Commercial construction and site development clients use McNadoes for pre-build site clearing, demolition of existing structures, and excavation of foundation areas. The speed advantage over conventional methods is significant at commercial scale. The depth tolerance (±18 inches) is a consideration that we address directly in the project scoping process.",
+    services: ["Site demolition", "Site excavation (±18\")", "Pre-build debris clearing", "Post-construction clearing"],
+    link: "/services/demolition",
+  },
+  {
+    title: "Municipal Government",
+    icon: "🏛",
+    desc: "Counties and municipalities contract with McNadoes for on-call tornado deployment services under annual or multi-year agreements. Post-storm clearing, condemned structure removal, land management for county-owned property, and emergency scope work are the primary applications. Municipal procurement officers: we are RFP-compatible.",
+    services: ["Post-storm clearing", "Condemned structure removal", "Annual service contracts", "Emergency scope clearing"],
+    link: "/services/municipal-contracts",
+  },
+  {
+    title: "Insurance",
+    icon: "📋",
+    desc: "McNadoes works with property and casualty insurers on post-loss site remediation where the cost of conventional clearing exceeds the economic value of the property. We complete the clearing. You close the claim. We have found that insurance clients appreciate a defined timeline and a post-service aerial documentation package, and we provide both.",
+    services: ["Post-loss site clearing", "Total loss remediation", "Aerial documentation", "Defined timeline commitments"],
+    link: "/contact",
+  },
+];
+---
+
+<BaseLayout
+  title="Industries | McNadoes Tornado Services"
+  description="McNadoes serves agriculture, construction, municipal government, and insurance clients across seven states. AI-commanded tornado deployment for every application we have agreed to perform."
+  canonicalPath="/industries"
+>
+
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Industries Served</div>
+      <h1 class="text-4xl font-bold mb-4">Who Uses McNadoes</h1>
+      <p class="text-mist/70 max-w-2xl leading-relaxed">
+        McNadoes operates across agriculture, construction, municipal government, and insurance sectors. The service is the same in each case: we command a tornado to do what you need done. The applications differ. The tornado does not ask why.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-offwhite">
+    <div class="max-w-7xl mx-auto px-6 space-y-6">
+      {industries.map(industry => (
+        <div class="bg-white border border-mist p-8 rounded-sm">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-2">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-3xl">{industry.icon}</span>
+                <h2 class="text-2xl font-bold text-navy">{industry.title}</h2>
+              </div>
+              <p class="text-steel leading-relaxed text-sm">{industry.desc}</p>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <div class="text-xs font-mono text-blue/70 uppercase tracking-widest mb-3">Common Applications</div>
+                <ul class="space-y-2">
+                  {industry.services.map(s => (
+                    <li class="flex gap-2 text-sm text-steel">
+                      <span class="text-gold flex-shrink-0">✓</span>
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <a href={industry.link} class="inline-block text-xs font-mono text-blue hover:text-blue-light transition-colors">
+                Learn more →
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-navy text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold">Your industry isn't listed?</p>
+        <p class="text-mist/60 text-sm mt-1">Submit an inquiry. We assess all project requests. Some of them are on the other list. We will tell you either way.</p>
+      </div>
+      <a href="/contact" class="px-6 py-3 bg-gold text-navy font-bold hover:bg-gold-light transition-colors rounded-sm flex-shrink-0 text-sm">
+        Submit an Inquiry
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

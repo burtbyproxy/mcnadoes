@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    slug: "debris-removal",
+    title: "Debris Removal",
+    icon: "🌪",
+    tagline: "Post-event site clearing at atmospheric scale.",
+    desc: "McNadoes debris removal services operate on timelines that conventional equipment cannot match. Where a standard crew and equipment package requires two to three weeks for large-scale post-storm or post-demolition clearance, McNadoes completes comparable scope in hours. This is not an exaggeration for marketing purposes. It is a property of the service.",
+    specs: ["Sites up to 500 acres", "Categorical precision via AI guidance", "Compliant material segregation", "Post-service aerial documentation"]
+  },
+  {
+    slug: "site-excavation",
+    title: "Site Excavation",
+    icon: "⛏",
+    tagline: "Foundation prep for commercial and agricultural builds.",
+    desc: "McNadoes provides tornado-directed excavation services for commercial site preparation and agricultural land clearing. Our AI guidance system determines optimal tornado classification, rotational approach vector, and target dwell time to achieve specified excavation depth within an 18-inch tolerance. For projects where that tolerance is insufficient, we recommend conventional excavation or a conversation about your tolerance for precision.",
+    specs: ["Depth control ±18 inches", "Commercial and agricultural sites", "Pre-service geological survey", "Fill material removal included"]
+  },
+  {
+    slug: "municipal-contracts",
+    title: "Municipal Contracts",
+    icon: "🏛",
+    tagline: "Long-term atmospheric service agreements for local government.",
+    desc: "McNadoes offers annual and multi-year service agreements to counties and municipalities in our operational coverage area. Contracted clients receive priority scheduling during peak season, a dedicated account representative, quarterly atmospheric availability forecasts, and preferential rate structures that reflect the ongoing nature of the relationship.",
+    specs: ["Annual and multi-year terms", "Priority seasonal scheduling", "Dedicated account rep", "Volume rate structures", "Quarterly forecast reports"]
+  },
+  {
+    slug: "atmospheric-logistics",
+    title: "Atmospheric Logistics",
+    icon: "📦",
+    tagline: "Point-to-point material transport via directed atmospheric event.",
+    desc: "For bulk materials in locations where conventional transport is cost-prohibitive — remote agricultural sites, inaccessible terrain, large-volume low-value cargo — McNadoes Atmospheric Logistics provides an alternative that leverages tornado energy already in motion. Coverage area is, by definition, wherever the storm is going. Our scheduling team works backward from destination.",
+    specs: ["Bulk material transport", "Agricultural and industrial cargo", "Terrain-independent routing", "Pre-shipment trajectory modeling"]
+  },
+  {
+    slug: "agricultural",
+    title: "Agricultural Services",
+    icon: "🌾",
+    tagline: "Seasonal land management for farming operations.",
+    desc: "McNadoes Agricultural Services are designed for the realities of Kansas, Oklahoma, and Nebraska farming: large acreages, seasonal windows, and economics that don't support conventional equipment for every task. Our service catalog includes field turning assistance, irrigation channel clearing, windbreak removal, and targeted crop rotation support. We have active contracts with seventeen county agricultural departments.",
+    specs: ["Field clearing and turning", "Irrigation channel prep", "Windbreak and stubble removal", "Seasonal scheduling priority"]
+  },
+  {
+    slug: "demolition",
+    title: "Demolition Services",
+    icon: "🏗",
+    tagline: "Permitted structural removal for commercial and residential properties.",
+    desc: "McNadoes demolition services offer a permitted alternative to conventional implosion and mechanical demolition for derelict, condemned, or surplus structures. The process is thorough, requires less pre-clearance than explosive methods, and produces a site that most clients describe as 'ready to work with.' Permitting support is included in all demolition contracts.",
+    specs: ["Residential and commercial structures", "Permitting support included", "Pre-demolition utility coordination", "Post-service site survey", "Material segregation for salvage"]
+  }
+];
+---
+
+<BaseLayout
+  title="Tornado Services | Debris Removal, Excavation, Demolition & More"
+  description="McNadoes AI-commanded tornado services: debris removal, site excavation, demolition, atmospheric logistics, municipal contracts, and agricultural applications. Seven-state coverage."
+>
+
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Service Catalog</div>
+      <h1 class="text-4xl font-bold mb-4">What We Do</h1>
+      <p class="text-mist/70 max-w-2xl">
+        McNadoes offers a growing range of tornado-directed services for municipal, commercial, agricultural, and industrial clients. Each service is backed by our AI guidance platform, our operations team, and Steve.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-offwhite">
+    <div class="max-w-7xl mx-auto px-6 space-y-6">
+      {services.map(s => (
+        <a href={`/services/${s.slug}`} class="group block bg-white border border-mist hover:border-blue/30 hover:shadow-md transition-all p-8 rounded-sm no-underline">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="text-4xl flex-shrink-0">{s.icon}</div>
+            <div class="flex-1">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h2 class="text-xl font-bold text-navy group-hover:text-blue transition-colors">{s.title}</h2>
+                  <div class="text-xs font-mono text-steel/60 mt-0.5">{s.tagline}</div>
+                </div>
+                <div class="text-blue/40 group-hover:text-blue transition-colors text-xl flex-shrink-0">→</div>
+              </div>
+              <p class="text-steel text-sm leading-relaxed mt-3 max-w-3xl">{s.desc}</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                {s.specs.map(spec => (
+                  <span class="text-xs font-mono bg-offwhite border border-mist text-steel/70 px-3 py-1 rounded-sm">{spec}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-navy text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2">
+      <div class="aspect-square overflow-hidden">
+        <img
+          src="/images/photos/steve-truck-tornado.jpg"
+          alt="McNadoes truck on-site during an active deployment"
+          class="w-full h-full object-cover opacity-90"
+        />
+      </div>
+      <div class="flex flex-col justify-center p-12">
+        <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Get Started</div>
+        <h3 class="text-3xl font-bold mb-4">Don't See What You Need?</h3>
+        <p class="text-mist/70 text-sm leading-relaxed mb-8">
+          Submit an inquiry and we'll assess whether your project is within scope. Most things are. Some things are on the other list. We'll tell you either way.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-3 bg-gold text-navy font-bold hover:bg-gold-light transition-colors rounded-sm self-start">
+          Submit an Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

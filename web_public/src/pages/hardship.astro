@@ -1,0 +1,377 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Hardship Review Application" description="McNadoes Hardship Review Application — Form MC-7 (Rev. 11). For emergency and documented hardship intake only.">
+
+  <section class="bg-navy-bg text-white py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Form MC-7 · Revision 11 · Hardship & Emergency Review</div>
+      <h1 class="text-3xl font-bold mb-3">McNadoes Hardship Review Application</h1>
+      <p class="text-mist/60 text-sm font-mono max-w-2xl">
+        Complete all fields. Incomplete submissions are automatically rejected without review. All documentation requirements are mandatory. There are no exceptions to the documentation requirements, including the exception you are already thinking of.
+      </p>
+    </div>
+  </section>
+
+  <div class="bg-danger/5 border-b border-danger/20">
+    <div class="max-w-5xl mx-auto px-6 py-3 text-xs font-mono text-danger/80">
+      ⚠ This form is for hardship and emergency review only. Submitting a standard project inquiry through this form will result in permanent removal from the McNadoes inquiry list.
+    </div>
+  </div>
+
+  <section class="py-12 bg-offwhite">
+    <div class="max-w-5xl mx-auto px-6">
+      <form id="hardship-form" class="space-y-10" novalidate>
+
+        <!-- Section 1 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-6">
+            Section 1 — Applicant Identification
+          </h2>
+          <div class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Legal Name (as it appears on federal tax filings) *</label>
+                <input type="text" class="field" placeholder="Full legal name" />
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Federal EIN or SSN (last 4 digits) *</label>
+                <input type="text" maxlength="4" class="field" placeholder="####" />
+                <p class="text-xs text-steel/50 font-mono mt-1">Required for cross-reference with FEMA hardship registry.</p>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">County Assessor Parcel Number of Affected Property *</label>
+              <input type="text" class="field" placeholder="e.g. 123-456-789-000" />
+              <p class="text-xs text-steel/50 font-mono mt-1">Found on your most recent property tax statement. If you do not have this, you cannot submit this form.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-5">
+              <div>
+                <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">FEMA Flood Zone Designation *</label>
+                <select class="field">
+                  <option value="">Select zone</option>
+                  <option>Zone A</option>
+                  <option>Zone AE</option>
+                  <option>Zone AH</option>
+                  <option>Zone AO</option>
+                  <option>Zone B</option>
+                  <option>Zone C</option>
+                  <option>Zone D</option>
+                  <option>Zone V</option>
+                  <option>Zone VE</option>
+                  <option>Zone X</option>
+                  <option>Undetermined</option>
+                  <option>My property is not in the FEMA database</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">FEMA Map Panel Number *</label>
+                <input type="text" class="field" placeholder="e.g. 20173C0142E" />
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Panel Effective Date *</label>
+                <input type="date" class="field" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-6">
+            Section 2 — Nature of Hardship
+          </h2>
+          <div class="space-y-5">
+            <div>
+              <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Hardship Classification *</label>
+              <select class="field">
+                <option value="">Select primary classification</option>
+                <option>Natural Disaster Recovery (FEMA Declared)</option>
+                <option>Natural Disaster Recovery (State Declared, Not Federal)</option>
+                <option>Natural Disaster Recovery (Local Only, Undeclared)</option>
+                <option>Agricultural Emergency (USDA Documented)</option>
+                <option>Municipal Infrastructure Failure</option>
+                <option>Condemnation — Imminent Public Hazard</option>
+                <option>Environmental Remediation — Court Ordered</option>
+                <option>Environmental Remediation — Voluntary, Documented</option>
+                <option>Emergency Debris Field — Active Danger</option>
+                <option>Other Documented Hardship (requires Attachment F)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">
+                Describe the hardship in detail. Include timeline, affected parties, estimated economic impact, and why delay beyond standard scheduling constitutes irreparable harm. *
+              </label>
+              <textarea rows="6" class="field resize-none" placeholder="Minimum 250 words. Submissions under 250 words are returned unread."></textarea>
+              <div class="flex justify-between mt-1">
+                <p class="text-xs text-steel/50 font-mono">Minimum 250 words required.</p>
+                <span id="word-count" class="text-xs font-mono text-steel/50">0 words</span>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">
+                Date hardship condition was first documented *
+              </label>
+              <input type="date" class="field" />
+              <p class="text-xs text-steel/50 font-mono mt-1">Must be within the past 18 months. Hardships older than 18 months are considered pre-existing conditions and do not qualify for emergency review.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-6">
+            Section 3 — Prior Attempts with Conventional Services
+          </h2>
+          <p class="text-sm text-steel mb-5">You must document contact with at least three (3) conventional service providers who were unable or unwilling to address your hardship. McNadoes does not review applications from parties who have not first exhausted conventional options.</p>
+          <div class="space-y-6">
+            {[1,2,3].map(n => (
+              <div class="bg-white border border-mist p-5 rounded-sm">
+                <div class="text-xs font-mono text-blue/60 uppercase tracking-widest mb-4">Conventional Vendor {n}</div>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Company Name *</label>
+                    <input type="text" class="field" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Contact Name *</label>
+                    <input type="text" class="field" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Date Contacted *</label>
+                    <input type="date" class="field" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Reason for Refusal or Failure *</label>
+                    <input type="text" class="field" placeholder="e.g. Scope too large, timeline infeasible" />
+                  </div>
+                  <div class="md:col-span-2">
+                    <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Written Refusal Reference Number or Document ID *</label>
+                    <input type="text" class="field" placeholder="From their written decline documentation" />
+                    <p class="text-xs text-steel/50 font-mono mt-1">Verbal refusals do not qualify. You must have received written documentation of each vendor's inability to assist.</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-6">
+            Section 4 — Atmospheric Impact Pre-Assessment
+          </h2>
+          <p class="text-sm text-steel mb-5">Applicants are required to complete a basic atmospheric impact pre-assessment prior to submission. This is not something McNadoes performs on your behalf at this stage.</p>
+          <div class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Nearest ASOS Weather Station ID *</label>
+                <input type="text" class="field" placeholder="e.g. KICT" />
+                <p class="text-xs text-steel/50 font-mono mt-1">4-letter ICAO identifier. Available at aviationweather.gov.</p>
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">Distance from Site to Station (miles) *</label>
+                <input type="number" min="0" max="999" class="field" placeholder="0.0" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">
+                Has a licensed meteorologist assessed tornado viability at this location within the past 6 months? *
+              </label>
+              <div class="flex gap-6 mt-2">
+                <label class="flex items-center gap-2 text-sm text-navy cursor-pointer">
+                  <input type="radio" name="met-assessment" value="yes" class="accent-blue" /> Yes — documentation attached
+                </label>
+                <label class="flex items-center gap-2 text-sm text-navy cursor-pointer">
+                  <input type="radio" name="met-assessment" value="no" class="accent-blue" /> No
+                </label>
+              </div>
+              <p class="text-xs text-danger/70 font-mono mt-2">Note: Applications without a licensed meteorologist's viability assessment are reviewed at lower priority. "Lower priority" on a hardship queue means additional delay.</p>
+            </div>
+            <div>
+              <label class="block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2">
+                Dominant soil composition of affected site *
+              </label>
+              <select class="field">
+                <option value="">Select primary soil type</option>
+                <option>Silty clay loam</option>
+                <option>Sandy loam</option>
+                <option>Clay</option>
+                <option>Silt loam</option>
+                <option>Loamy sand</option>
+                <option>Gravelly loam</option>
+                <option>Bedrock (shallow)</option>
+                <option>Fill material — documented</option>
+                <option>Fill material — undocumented</option>
+                <option>Unknown — soil survey not available for this parcel</option>
+              </select>
+              <p class="text-xs text-steel/50 font-mono mt-1">Available through USDA Web Soil Survey at websoilsurvey.nrcs.usda.gov. If you are unsure what this means, consult a licensed soil scientist before submitting.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-navy tracking-widest uppercase border-b border-mist pb-3 mb-6">
+            Section 5 — Declarations & Attestations
+          </h2>
+          <div class="space-y-4 bg-white border border-mist p-6 rounded-sm">
+            {[
+              "I attest that all information provided in this application is accurate and complete to the best of my knowledge, and that I understand that providing false or misleading information is grounds for permanent disqualification.",
+              "I confirm that I have read and understood the McNadoes Use Policy in its entirety, including all 28 subsections, and that my requested application does not appear on the prohibited list under any reasonable interpretation.",
+              "I understand that submission of this form does not constitute a service agreement, a commitment to review, a scheduling placeholder, or an indication that McNadoes views my situation as a qualifying hardship.",
+              "I acknowledge that Steve McKay may decline this application for any reason or no stated reason, that his decision is final, and that I will not contact McNadoes to appeal the decision, ask for clarification, or 'just follow up real quick.'",
+              "I confirm that I have not previously submitted a hardship application that was declined, or if I have, that the circumstances have materially changed and I have attached a written explanation of those changes as Attachment G.",
+            ].map((text, i) => (
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="mt-0.5 accent-blue flex-shrink-0" />
+                <span class="text-xs text-steel leading-relaxed group-hover:text-navy transition-colors">
+                  <span class="font-mono text-navy/40 mr-1">{i + 1}.</span> {text}
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="bg-white border border-mist p-6 rounded-sm">
+          <p class="text-xs font-mono text-steel/60 mb-5">
+            Before submitting, confirm that you have completed all required fields, attached all required documentation, and that you have not left any field blank with the intention of "coming back to it." The form does not save. If you close this window, you start over.
+          </p>
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full py-4 bg-navy text-white font-bold hover:bg-navy-bg transition-colors rounded-sm flex items-center justify-center gap-2"
+          >
+            <span id="btn-label">Submit Form MC-7 for Review</span>
+            <svg id="btn-spinner" class="hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+            </svg>
+          </button>
+
+          <div id="error-msg" class="hidden mt-4 p-4 bg-danger/5 border border-danger/20 rounded-sm space-y-1">
+            <p class="text-danger text-sm font-mono font-bold">This submission cannot be processed. The following issues were found:</p>
+            <ul id="error-list" class="text-danger/80 text-xs font-mono space-y-1 mt-2 list-disc list-inside"></ul>
+          </div>
+
+          <div id="success-msg" class="hidden mt-4 p-6 bg-blue/5 border border-blue/20 rounded-sm text-center">
+            <p class="text-navy font-bold mb-2">Form MC-7 Received.</p>
+            <p class="text-steel text-sm font-mono leading-relaxed">
+              Your application has been logged. Steve McKay will review it when he is able to. You will not receive a status update until a decision has been made. Do not call. Do not email to confirm receipt. This is your confirmation.
+            </p>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  @reference "../styles/global.css";
+  .field {
+    @apply w-full px-4 py-3 border border-mist bg-white text-navy text-sm rounded-sm focus:outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-colors font-mono;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('hardship-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnLabel = document.getElementById('btn-label') as HTMLSpanElement;
+  const spinner = document.getElementById('btn-spinner') as SVGSVGElement;
+  const errorMsg = document.getElementById('error-msg') as HTMLDivElement;
+  const errorList = document.getElementById('error-list') as HTMLUListElement;
+  const successMsg = document.getElementById('success-msg') as HTMLDivElement;
+
+  // Word count
+  const descriptionTextarea = form.querySelectorAll('textarea')[0] as HTMLTextAreaElement;
+  const wordCountEl = document.getElementById('word-count') as HTMLSpanElement;
+  descriptionTextarea.addEventListener('input', () => {
+    const words = descriptionTextarea.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+    wordCountEl.textContent = `${words} word${words !== 1 ? 's' : ''}`;
+    wordCountEl.className = `text-xs font-mono ${words >= 250 ? 'text-blue' : 'text-danger/60'}`;
+  });
+
+  const validationRules: Array<{ check: () => boolean; message: string }> = [
+    {
+      check: () => {
+        const words = descriptionTextarea.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+        return words >= 250;
+      },
+      message: 'Section 2: Hardship description must be at least 250 words.'
+    },
+    {
+      check: () => {
+        const radios = form.querySelectorAll('input[name="met-assessment"]') as NodeListOf<HTMLInputElement>;
+        return Array.from(radios).some(r => r.checked);
+      },
+      message: 'Section 4: You must indicate whether a licensed meteorologist has assessed this site.'
+    },
+    {
+      check: () => {
+        const checkboxes = form.querySelectorAll('input[type="checkbox"]') as NodeListOf<HTMLInputElement>;
+        return Array.from(checkboxes).every(c => c.checked);
+      },
+      message: 'Section 5: All five declarations must be acknowledged.'
+    },
+    {
+      check: () => {
+        const femaPanel = (form.querySelector('input[placeholder="e.g. 20173C0142E"]') as HTMLInputElement)?.value;
+        return /^[0-9]{5}[A-Z][0-9]{4}[A-Z]$/.test(femaPanel ?? '');
+      },
+      message: 'Section 1: FEMA Map Panel Number must be in standard format (e.g. 20173C0142E). Verify at msc.fema.gov.'
+    },
+    {
+      check: () => {
+        const parcel = (form.querySelector('input[placeholder="e.g. 123-456-789-000"]') as HTMLInputElement)?.value;
+        return /^\d{3}-\d{3}-\d{3}-\d{3}$/.test(parcel ?? '');
+      },
+      message: 'Section 1: Parcel number must be in ###-###-###-### format. Contact your county assessor\'s office if you do not have this.'
+    },
+    {
+      check: () => {
+        const station = (form.querySelector('input[placeholder="e.g. KICT"]') as HTMLInputElement)?.value;
+        return /^K[A-Z]{3}$/.test(station?.toUpperCase() ?? '');
+      },
+      message: 'Section 4: ASOS station ID must be a valid 4-letter ICAO identifier beginning with "K" (contiguous U.S. stations only).'
+    },
+    {
+      check: () => {
+        const refusals = form.querySelectorAll('input[placeholder="From their written decline documentation"]') as NodeListOf<HTMLInputElement>;
+        return Array.from(refusals).every(r => r.value.trim().length > 0);
+      },
+      message: 'Section 3: Written refusal reference numbers are required for all three conventional vendors.'
+    },
+  ];
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    errorMsg.classList.add('hidden');
+    errorList.innerHTML = '';
+
+    const failures = validationRules.filter(r => !r.check());
+
+    if (failures.length > 0) {
+      failures.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f.message;
+        errorList.appendChild(li);
+      });
+      errorMsg.classList.remove('hidden');
+      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return;
+    }
+
+    btnLabel.textContent = 'Transmitting...';
+    spinner.classList.remove('hidden');
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+    }, 2400);
+  });
+</script>

@@ -1,0 +1,355 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Unintended Structural Interaction Report | Form MC-9"
+  description="McNadoes Corporation Form MC-9 — Unintended Structural Interaction Report. For documentation of structures affected outside the authorized deployment perimeter. Completion of this form does not constitute admission of liability."
+  canonicalPath="/incident-report"
+>
+
+  <section class="bg-navy-bg text-white py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Form MC-9 · Revision 3 · Unintended Structural Interaction</div>
+      <h1 class="text-3xl font-bold mb-3">Unintended Structural Interaction Report</h1>
+      <p class="text-mist/60 text-sm font-mono max-w-3xl">
+        Complete this form within 72 hours of the deployment date on which the interaction occurred. Incomplete submissions are logged but not reviewed. Completion of this form does not constitute an admission of liability on the part of McNadoes Corporation. It constitutes documentation of what you have told us occurred.
+      </p>
+    </div>
+  </section>
+
+  <div class="bg-danger/5 border-b border-danger/20">
+    <div class="max-w-5xl mx-auto px-6 py-4 text-xs font-mono text-danger/80">
+      ⚠ This form is for structures affected outside the authorized deployment perimeter only. If the affected structure was within the authorized perimeter, this is not an incident. That is the service. Please review your contract.
+    </div>
+  </div>
+
+  <section class="bg-offwhite py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <form id="mc9-form" novalidate class="space-y-10">
+
+        <!-- Section 1 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 1 — Deployment Reference</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="field-label">Contract / Deployment Reference Number</label>
+              <input id="f-ref" type="text" class="field" placeholder="MCN-YYYY-XXXXXX" />
+              <p class="hint">Format: MCN-YYYY-XXXXXX. Located in your deployment confirmation email.</p>
+            </div>
+            <div>
+              <label class="field-label">Date of Deployment</label>
+              <input id="f-date" type="date" class="field" />
+            </div>
+            <div>
+              <label class="field-label">Authorized Deployment Site Address</label>
+              <input id="f-site" type="text" class="field" placeholder="Street address of the authorized site" />
+            </div>
+            <div>
+              <label class="field-label">Deployment Service Type</label>
+              <select id="f-service" class="field">
+                <option value="">— Select —</option>
+                <option>Debris Removal</option>
+                <option>Site Excavation</option>
+                <option>Demolition</option>
+                <option>Atmospheric Logistics</option>
+                <option>Agricultural Services</option>
+                <option>Municipal Contract</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 2 — Affected Structure</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="field-label">Structure Description</label>
+              <input id="f-structure" type="text" class="field" placeholder="e.g. Residential garage, commercial outbuilding" />
+            </div>
+            <div>
+              <label class="field-label">Estimated Square Footage</label>
+              <input id="f-sqft" type="number" min="1" class="field" placeholder="e.g. 400" />
+              <p class="hint">Approximate is acceptable. "A lot" is not a number.</p>
+            </div>
+            <div>
+              <label class="field-label">Current Status of Structure</label>
+              <select id="f-status" class="field">
+                <option value="">— Select —</option>
+                <option>Standing</option>
+                <option>Partially Standing</option>
+                <option>No Longer Present</option>
+                <option>Cannot Determine</option>
+                <option>Under Review by Third Parties</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label">Distance from Authorized Perimeter (feet)</label>
+              <input id="f-distance" type="number" min="1" class="field" placeholder="e.g. 85" />
+              <p class="hint">Must be greater than zero. If zero, see the note at the top of this form.</p>
+            </div>
+            <div class="md:col-span-2">
+              <label class="field-label">GPS Coordinates of Affected Structure</label>
+              <input id="f-gps" type="text" class="field" placeholder="e.g. 37.6872° N, 97.3301° W" />
+              <p class="hint">Decimal degrees or DMS format accepted. "Near the thing that got hit" is not accepted.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 3 — Property Owner Notification</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="field-label">Has the affected structure's owner been notified?</label>
+              <div class="flex gap-6 mt-3">
+                <label class="flex items-center gap-2 text-sm text-steel cursor-pointer">
+                  <input type="radio" name="owner-notified" value="yes" class="accent-blue" /> Yes
+                </label>
+                <label class="flex items-center gap-2 text-sm text-steel cursor-pointer">
+                  <input type="radio" name="owner-notified" value="no" class="accent-blue" /> No
+                </label>
+                <label class="flex items-center gap-2 text-sm text-steel cursor-pointer">
+                  <input type="radio" name="owner-notified" value="unknown" class="accent-blue" /> Unknown (structure ownership unclear)
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="field-label">Has the owner been informed McNadoes is not liable?</label>
+              <div class="flex gap-6 mt-3">
+                <label class="flex items-center gap-2 text-sm text-steel cursor-pointer">
+                  <input type="radio" name="liability-informed" value="yes" class="accent-blue" /> Yes
+                </label>
+                <label class="flex items-center gap-2 text-sm text-steel cursor-pointer">
+                  <input type="radio" name="liability-informed" value="no" class="accent-blue" /> No
+                </label>
+                <label class="flex items-center gap-2 text-sm text-steel cursor-pointer">
+                  <input type="radio" name="liability-informed" value="na" class="accent-blue" /> They did not take the call
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 4 — Witnesses</h2>
+          <p class="text-xs font-mono text-steel/60 mb-4">A minimum of two witnesses are required. Witnesses must not be employed by McNadoes Corporation or the client organization.</p>
+          <div class="space-y-4">
+            {[1, 2, 3].map(n => (
+              <div class="grid md:grid-cols-3 gap-4">
+                <div>
+                  <label class="field-label">Witness {n} — Full Name</label>
+                  <input type="text" class="field witness-name" placeholder={`Witness ${n} name`} />
+                </div>
+                <div>
+                  <label class="field-label">Contact Information</label>
+                  <input type="text" class="field" placeholder="Phone or email" />
+                </div>
+                <div>
+                  <label class="field-label">Relationship to Client</label>
+                  <input type="text" class="field" placeholder='e.g. "Neighbor", "Passerby"' />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 5 — Incident Description</h2>
+          <div>
+            <label class="field-label">Describe what occurred, in your own words</label>
+            <textarea id="f-description" rows="8" class="field" placeholder="Provide a complete and factual account of the interaction, including timeline, observed behavior of the atmospheric event, and the sequence in which the structure was affected..."></textarea>
+            <div class="flex justify-between mt-1">
+              <p class="hint">Minimum 150 words. Phrases such as "it just went there" and "I don't know what happened" do not meet the minimum standard for review.</p>
+              <span id="word-count" class="text-xs font-mono text-danger/60">0 words</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 6 — Declarations -->
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase pb-3 border-b border-mist mb-6">Section 6 — Required Declarations</h2>
+          <div class="space-y-4">
+            {[
+              ["decl-1", "I understand that completion of this form does not constitute an admission of liability on the part of McNadoes Corporation."],
+              ["decl-2", "I confirm that the information provided in this form is accurate to the best of my knowledge, including the GPS coordinates, which I verified rather than estimating."],
+              ["decl-3", "I understand that McNadoes will review this form and respond within 10–15 business days, and that 'respond' means 'acknowledge receipt' and not necessarily 'resolve.'"],
+              ["decl-4", "I understand that the authorized deployment perimeter was established in my contract, that I reviewed and signed my contract, and that the perimeter was not changed without my knowledge."],
+              ["decl-5", "I have read the McNadoes Terms of Service as they pertain to atmospheric overspray, adjacent property interaction, and the definition of 'scope.'"],
+            ].map(([id, text]) => (
+              <label class="flex gap-3 items-start cursor-pointer group">
+                <input type="checkbox" id={id} class="mt-0.5 accent-blue flex-shrink-0" />
+                <span class="text-sm text-steel leading-relaxed">{text}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- Error / Success -->
+        <div id="error-msg" class="hidden bg-danger/5 border border-danger/20 rounded-sm p-5">
+          <p class="text-xs font-mono font-bold text-danger mb-2">Form MC-9 cannot be submitted. The following items require correction:</p>
+          <ul id="error-list" class="text-xs font-mono text-danger/80 space-y-1 list-disc list-inside"></ul>
+        </div>
+
+        <div id="success-msg" class="hidden bg-white border border-mist rounded-sm p-8 text-center">
+          <div class="text-xs font-mono text-blue/60 uppercase tracking-widest mb-3">Submission Received</div>
+          <p class="font-bold text-navy text-lg mb-2">Form MC-9 has been logged.</p>
+          <p class="text-sm text-steel font-mono max-w-lg mx-auto leading-relaxed">Your incident report has been received and assigned a case number. A McNadoes representative will acknowledge receipt within 10–15 business days. Do not submit a duplicate form. This will not accelerate the review.</p>
+        </div>
+
+        <div class="flex gap-4">
+          <button
+            type="submit"
+            id="submit-btn"
+            class="px-8 py-4 bg-navy text-white font-bold text-sm hover:bg-navy-bg transition-colors rounded-sm flex items-center gap-2"
+          >
+            <span id="btn-label">Submit Incident Report</span>
+            <svg id="btn-spinner" class="hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+            </svg>
+          </button>
+          <p class="text-xs font-mono text-steel/50 self-center">Processing time: 10–15 business days. This is not negotiable.</p>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  @reference "../styles/global.css";
+  .field {
+    @apply w-full px-4 py-3 border border-mist bg-white text-navy text-sm rounded-sm focus:outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-colors font-mono;
+  }
+  .field-label {
+    @apply block text-xs font-mono font-semibold text-navy/70 uppercase tracking-widest mb-2;
+  }
+  .hint {
+    @apply text-xs text-steel/50 font-mono mt-1 leading-relaxed;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('mc9-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnLabel = document.getElementById('btn-label') as HTMLSpanElement;
+  const spinner = document.getElementById('btn-spinner') as SVGSVGElement;
+  const errorMsg = document.getElementById('error-msg') as HTMLDivElement;
+  const errorList = document.getElementById('error-list') as HTMLUListElement;
+  const successMsg = document.getElementById('success-msg') as HTMLDivElement;
+  const desc = document.getElementById('f-description') as HTMLTextAreaElement;
+  const wordCount = document.getElementById('word-count') as HTMLSpanElement;
+
+  desc.addEventListener('input', () => {
+    const words = desc.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+    wordCount.textContent = `${words} words`;
+    wordCount.className = `text-xs font-mono ${words >= 150 ? 'text-blue' : 'text-danger/60'}`;
+  });
+
+  const rules: Array<{check: () => boolean; message: string}> = [
+    {
+      check: () => /^MCN-\d{4}-\w{6}$/.test((document.getElementById('f-ref') as HTMLInputElement).value.trim()),
+      message: 'Section 1: Deployment reference number must be in format MCN-YYYY-XXXXXX.'
+    },
+    {
+      check: () => (document.getElementById('f-date') as HTMLInputElement).value !== '',
+      message: 'Section 1: Date of deployment is required.'
+    },
+    {
+      check: () => (document.getElementById('f-site') as HTMLInputElement).value.trim().length > 5,
+      message: 'Section 1: Authorized deployment site address is required.'
+    },
+    {
+      check: () => (document.getElementById('f-service') as HTMLSelectElement).value !== '',
+      message: 'Section 1: Deployment service type is required.'
+    },
+    {
+      check: () => (document.getElementById('f-structure') as HTMLInputElement).value.trim().length > 0,
+      message: 'Section 2: Structure description is required.'
+    },
+    {
+      check: () => {
+        const v = parseInt((document.getElementById('f-sqft') as HTMLInputElement).value);
+        return !isNaN(v) && v > 0;
+      },
+      message: 'Section 2: Estimated square footage must be a number greater than zero.'
+    },
+    {
+      check: () => (document.getElementById('f-status') as HTMLSelectElement).value !== '',
+      message: 'Section 2: Current status of structure is required.'
+    },
+    {
+      check: () => {
+        const v = parseInt((document.getElementById('f-distance') as HTMLInputElement).value);
+        return !isNaN(v) && v > 0;
+      },
+      message: 'Section 2: Distance from authorized perimeter must be greater than zero. If zero, see the note at the top of this form.'
+    },
+    {
+      check: () => {
+        const v = (document.getElementById('f-gps') as HTMLInputElement).value.trim();
+        return v.length > 5 && (v.includes('°') || v.includes('.'));
+      },
+      message: 'Section 2: GPS coordinates are required in decimal degrees or DMS format.'
+    },
+    {
+      check: () => document.querySelector('input[name="owner-notified"]:checked') !== null,
+      message: 'Section 3: You must indicate whether the structure owner has been notified.'
+    },
+    {
+      check: () => document.querySelector('input[name="liability-informed"]:checked') !== null,
+      message: 'Section 3: You must indicate whether the owner has been informed of liability.'
+    },
+    {
+      check: () => {
+        const names = document.querySelectorAll('.witness-name') as NodeListOf<HTMLInputElement>;
+        return Array.from(names).filter(n => n.value.trim().length > 0).length >= 2;
+      },
+      message: 'Section 4: At least two witness names are required.'
+    },
+    {
+      check: () => {
+        const words = desc.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+        return words >= 150;
+      },
+      message: 'Section 5: Incident description must be at least 150 words.'
+    },
+    ...['decl-1','decl-2','decl-3','decl-4','decl-5'].map((id, i) => ({
+      check: () => (document.getElementById(id) as HTMLInputElement).checked,
+      message: `Section 6: Declaration ${i + 1} must be acknowledged.`
+    }))
+  ];
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    errorMsg.classList.add('hidden');
+    errorList.innerHTML = '';
+
+    const failures = rules.filter(r => !r.check());
+    if (failures.length > 0) {
+      failures.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f.message;
+        errorList.appendChild(li);
+      });
+      errorMsg.classList.remove('hidden');
+      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return;
+    }
+
+    btnLabel.textContent = 'Logging incident...';
+    spinner.classList.remove('hidden');
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 2000);
+  });
+</script>

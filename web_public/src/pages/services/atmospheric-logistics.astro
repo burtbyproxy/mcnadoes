@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Atmospheric Logistics | McNadoes Tornado Services"
+  description="Bulk material transport via directed atmospheric event. McNadoes Atmospheric Logistics delivers cargo where conventional freight cannot. Coverage area is wherever we tell it to go."
+  canonicalPath="/services/atmospheric-logistics"
+>
+
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Services / Atmospheric Logistics</div>
+      <h1 class="text-4xl font-bold mb-4">Atmospheric Logistics</h1>
+      <p class="text-mist/70 max-w-2xl leading-relaxed">
+        Point-to-point bulk material transport via directed atmospheric event. Coverage area is wherever we tell the tornado to go. Topography is not a factor. Neither is the previous concept of freight.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-blue text-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {[
+        ["Terrain", "Independent"],
+        ["100%", "Pre-Shipment Modeling"],
+        ["Bulk", "Materials Only"],
+        ["0", "Freight Lanes Required"],
+      ].map(([stat, label]) => (
+        <div>
+          <div class="text-2xl font-bold text-gold">{stat}</div>
+          <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">{label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-offwhite py-16">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-5 text-steel leading-relaxed">
+        <h2 class="text-2xl font-bold text-navy">What We Do</h2>
+        <p>
+          For bulk materials in locations where conventional transport is cost-prohibitive — remote agricultural sites, inaccessible terrain, large-volume low-value cargo — McNadoes Atmospheric Logistics provides an alternative that leverages tornado energy already in motion.
+        </p>
+        <p>
+          The coverage area is, by definition, wherever the storm is going. Our scheduling team works backward from your destination. We determine which atmospheric conditions will produce a compliant trajectory, we schedule the deployment accordingly, and the material arrives.
+        </p>
+        <p>
+          We want to be clear that this service has a specific use case. It is not a replacement for precision freight. It is not appropriate for fragile cargo, documented valuables, or anything you would describe to us using the word "carefully." It is appropriate for bulk material that needs to move a significant distance across difficult terrain on a schedule that is driven by atmospheric conditions rather than driver availability.
+        </p>
+        <p>
+          Clients who understand this distinction have found Atmospheric Logistics to be one of our more cost-effective services. Clients who did not fully understand this distinction have had informative experiences.
+        </p>
+
+        <h2 class="text-2xl font-bold text-navy pt-4">Appropriate Cargo</h2>
+        <ul class="space-y-2">
+          {[
+            "Agricultural bulk materials (grain, aggregate, fill)",
+            "Construction materials (gravel, sand, loose aggregate)",
+            "Cleared field waste (crop residue, brush, stubble)",
+            "Post-harvest material requiring relocation",
+            "Site material requiring disposal or repositioning",
+          ].map(item => (
+            <li class="flex gap-3">
+              <span class="text-gold mt-1 flex-shrink-0">✓</span>
+              <span class="text-sm">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 class="text-2xl font-bold text-navy pt-4">Not Appropriate Cargo</h2>
+        <ul class="space-y-2">
+          {[
+            "Livestock of any kind",
+            "Documented property of any kind",
+            "Anything described to us as irreplaceable",
+            "Hazardous materials (see our use policy for the full explanation)",
+            "Items with a known destination street address",
+          ].map(item => (
+            <li class="flex gap-3">
+              <span class="text-danger/70 mt-1 flex-shrink-0">✗</span>
+              <span class="text-sm">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="space-y-5">
+        <div class="bg-navy text-white p-5 rounded-sm">
+          <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Service Specifications</div>
+          <div class="space-y-3 text-xs">
+            {[
+              ["Cargo type", "Bulk materials only"],
+              ["Terrain", "No restrictions"],
+              ["Route planning", "Trajectory modeled"],
+              ["Scheduling", "Atmosphere-dependent"],
+              ["Precision", "General direction"],
+              ["Insurance", "Client-provided"],
+              ["Manifest", "Required pre-service"],
+            ].map(([label, value]) => (
+              <div class="flex justify-between gap-4">
+                <span class="text-mist/50 font-mono">{label}</span>
+                <span class="text-mist font-mono text-right">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-gold/10 border border-gold/30 p-4 rounded-sm text-xs font-mono text-navy/70 leading-relaxed">
+          A pre-shipment trajectory model is required for all Atmospheric Logistics engagements. McNadoes does not deploy without a confirmed destination zone and cargo manifest.
+        </div>
+
+        <a href="/contact" class="block bg-blue text-white text-center py-3 px-5 font-bold hover:bg-blue-light transition-colors rounded-sm text-sm">
+          Submit a Project Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy text-white py-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold">View the full service catalog.</p>
+        <p class="text-mist/60 text-sm mt-1">Six core service lines across municipal, commercial, and agricultural applications.</p>
+      </div>
+      <a href="/services" class="px-6 py-3 border border-gold text-gold font-bold hover:bg-gold hover:text-navy transition-colors rounded-sm flex-shrink-0 text-sm">
+        All Services →
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

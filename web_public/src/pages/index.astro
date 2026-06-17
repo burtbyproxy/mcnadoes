@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const now = new Date();
+const currentQ = Math.ceil((now.getMonth() + 1) / 3);
+const offsetQuarters = 6;
+const totalQ = currentQ + offsetQuarters;
+const nextQ = ((totalQ - 1) % 4) + 1;
+const nextQYear = now.getFullYear() + Math.floor((currentQ + offsetQuarters - 1) / 4);
+const nextAvailableQuarter = `Q${nextQ} ${nextQYear}`;
+---
+
+<BaseLayout
+  title="AI-Commanded Tornado Services | Wichita, KS"
+  description="McNadoes Corporation deploys AI-commanded tornadoes for debris removal, excavation, demolition, and municipal contracts. Operational in seven states. We tell the tornado where to go. It goes there."
+>
+
+  <!-- Hero -->
+  <section class="bg-navy-bg text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(245,168,0,0.4) 39px, rgba(245,168,0,0.4) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(245,168,0,0.4) 39px, rgba(245,168,0,0.4) 40px);"></div>
+    <div class="max-w-7xl mx-auto px-6 pb-24 relative grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-block bg-gold text-navy text-xs font-mono font-bold px-3 py-1 mb-6 tracking-widest uppercase">
+          Earliest Available: {nextAvailableQuarter} · <a href="/hardship" class="underline hover:text-gold-light">Hardship Inquiries</a>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          We Command.<br/>
+          <span class="text-gold">Tornadoes Listen.</span>
+        </h1>
+        <p class="text-xl text-mist/80 mb-10 max-w-2xl leading-relaxed">
+          McNadoes Corporation deploys AI-commanded tornadoes for debris removal, site excavation, atmospheric logistics, and municipal applications. We tell the tornado where to go. It goes there. We are currently booked through {nextAvailableQuarter}. You are welcome to submit an inquiry. Steve reviews hardship cases personally.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="px-8 py-4 bg-gold text-navy font-bold text-base hover:bg-gold-light transition-colors rounded-sm">
+            Request a Service Quote
+          </a>
+          <a href="/services" class="px-8 py-4 border border-white/30 text-white font-semibold text-base hover:border-white/60 hover:bg-white/5 transition-colors rounded-sm">
+            View All Services
+          </a>
+        </div>
+      </div>
+      <div class="hidden md:block relative">
+        <div class="aspect-square w-full max-w-md ml-auto overflow-hidden rounded-sm border-2 border-gold/20">
+          <img
+            src="/images/photos/steve-field-tornado.jpg"
+            alt="Steve McKay on-site during an active McNadoes deployment"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur-sm border border-gold/20 px-4 py-2">
+          <p class="text-xs font-mono text-gold/80">ACTIVE DEPLOYMENT · SEDGWICK COUNTY, KS</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gold/20">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-8 text-xs font-mono text-mist/50">
+        <span>✓ FAA PART 107 COMPLIANT</span>
+        <span>✓ NOAA COORDINATION CERTIFIED</span>
+        <span>✓ ISO 9001:2015 REGISTERED</span>
+        <span>✓ KANSAS DEPT. OF COMMERCE VERIFIED</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="bg-blue text-white">
+    <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="text-3xl font-bold text-gold">847</div>
+        <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">Successful Deployments</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold text-gold">7</div>
+        <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">States of Operation</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold text-gold">98.2%</div>
+        <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">On-Site Accuracy</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold text-gold">0</div>
+        <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">Unintended Relocations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="bg-offwhite py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <div class="text-xs font-mono text-blue tracking-widest uppercase mb-3">Core Capabilities</div>
+        <h2 class="text-3xl font-bold text-navy">What We Do With a Tornado</h2>
+        <p class="text-steel mt-3 max-w-2xl">
+          McNadoes issues commands to active tornado systems via our proprietary AI platform, and those systems comply. The list of what we can accomplish with a directed tornado has grown considerably since 2019. So has the other list.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            icon: "🌪",
+            title: "Debris Removal",
+            slug: "debris-removal",
+            desc: "We command a tornado to your site. It removes the debris. What used to take three weeks and a fleet of excavators now takes forty-five minutes and a direct order."
+          },
+          {
+            icon: "⛏",
+            title: "Site Excavation",
+            slug: "site-excavation",
+            desc: "We command a tornado to excavate your site to specification. Our AI determines rotation speed, approach vector, and dwell time. Target depth achieved within ±18 inches."
+          },
+          {
+            icon: "🏛",
+            title: "Municipal Contracts",
+            slug: "municipal-contracts",
+            desc: "Annual and multi-year contracts giving municipalities on-call access to a commanded tornado. Bulk pricing available. Seventeen county references available on request."
+          },
+          {
+            icon: "📦",
+            title: "Atmospheric Logistics",
+            slug: "atmospheric-logistics",
+            desc: "Bulk material transport via commanded tornado. Coverage area is wherever we tell it to go. Topography is not a factor. Neither is the previous concept of freight."
+          },
+          {
+            icon: "🌾",
+            title: "Agricultural Services",
+            slug: "agricultural",
+            desc: "Seasonal field turning, irrigation channel clearing, and targeted crop rotation assistance. We have seventeen Kansas County ag departments who will confirm this works."
+          },
+          {
+            icon: "🏗",
+            title: "Demolition Services",
+            slug: "demolition",
+            desc: "We command a tornado to remove the structure. Permitted, thorough, and faster than implosion. The building will be gone. We are very clear with clients about what that means."
+          }
+        ].map(service => (
+          <a href={`/services/${service.slug}`} class="group bg-white border border-mist hover:border-blue/30 hover:shadow-md transition-all p-6 rounded-sm no-underline">
+            <div class="text-3xl mb-4">{service.icon}</div>
+            <h3 class="text-lg font-bold text-navy group-hover:text-blue transition-colors mb-2">{service.title}</h3>
+            <p class="text-sm text-steel leading-relaxed">{service.desc}</p>
+            <div class="mt-4 text-xs font-mono text-blue/60 group-hover:text-blue transition-colors">Learn more →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Policy Callout -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+      <div class="flex-1">
+        <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Corporate Use Policy</div>
+        <h2 class="text-3xl font-bold mb-4">There Are Things We Will Not Do.</h2>
+        <p class="text-mist/70 leading-relaxed max-w-xl">
+          McNadoes operates under a detailed and frequently updated list of prohibited applications. We put considerable thought into this document. Some of it was court-ordered. Most of it was not.
+        </p>
+      </div>
+      <div>
+        <a href="/will-not" class="inline-block px-8 py-4 border-2 border-gold text-gold font-bold hover:bg-gold hover:text-navy transition-colors rounded-sm">
+          Read the Full Policy
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Trust -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="text-xs font-mono text-blue tracking-widest uppercase mb-3">About McNadoes</div>
+          <h2 class="text-3xl font-bold text-navy mb-5">Founded on the Belief That Tornadoes Are an Underutilized Resource</h2>
+          <p class="text-steel leading-relaxed mb-4">
+            McNadoes was founded in 2019 on a straightforward premise: tornadoes are among the most powerful force-delivery systems on earth, and nobody was in charge of them.
+          </p>
+          <p class="text-steel leading-relaxed mb-4">
+            Four years of AI model training, one FAA variance, and several strongly-worded letters from the state of Oklahoma later, McNadoes was issuing commands to active tornado systems and those systems were complying. We now operate in seven states. The tornadoes comply in all of them.
+          </p>
+          <a href="/about" class="inline-block mt-2 text-blue font-semibold text-sm hover:text-blue-light transition-colors">
+            Full company history →
+          </a>
+          <div class="mt-6 p-4 bg-offwhite border border-mist rounded-sm">
+            <div class="text-xs font-mono text-blue/60 uppercase tracking-widest mb-2">Prior Work</div>
+            <p class="text-sm text-steel leading-relaxed">The same AI platform architecture behind McNadoes was previously deployed as the world's first AI-automated emergency alert system. It ran in Florida in 2025. That year, Florida recorded zero property damage from severe weather emergencies. The state canceled the contract.</p>
+            <a href="/ai-powered-emergency-alert-system" class="inline-block mt-3 text-xs font-mono text-blue hover:text-blue-light transition-colors">Read the full record →</a>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="aspect-square w-full overflow-hidden rounded-sm border border-mist">
+            <img
+              src="/images/photos/steve-award-tornado.jpg"
+              alt="Steve McKay receiving the Kansas Atmospheric Innovation Award"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="bg-offwhite border border-mist p-6 rounded-sm text-xs font-mono text-steel/60 text-center">
+            Steve McKay · Kansas Atmospheric Innovation Award · 2023
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-offwhite">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-10">
+        <div class="text-xs font-mono text-blue tracking-widest uppercase mb-3">Client Testimonials</div>
+        <h2 class="text-3xl font-bold text-navy">What Our Clients Say</h2>
+      </div>
+        <div class="bg-white border border-mist p-8 rounded-sm">
+          <div class="text-xs font-mono text-blue/70 tracking-widest uppercase mb-5">On the Record</div>
+          <div class="space-y-6">
+            {[
+              {
+                quote: "I was skeptical. I want to be clear about that. I was very skeptical. And then I watched it work and I stopped being skeptical.",
+                name: "R. Halverson",
+                title: "Director of Public Works, Sedgwick County, KS"
+              },
+              {
+                quote: "The accuracy was better than our previous vendor, who was using conventional equipment. The timeline was significantly shorter. I've recommended McNadoes to two other counties.",
+                name: "M. Trujillo",
+                title: "Operations Manager, Trujillo Ag Partners"
+              },
+              {
+                quote: "When I called to ask if this was real, Steve answered the phone himself and talked to me for forty minutes. That level of engagement is rare in this industry.",
+                name: "B. Whitmore",
+                title: "VP Infrastructure, Whitmore Construction Group"
+              }
+            ].map(t => (
+              <div class="border-l-2 border-gold/40 pl-4">
+                <p class="text-sm text-navy italic leading-relaxed mb-2">"{t.quote}"</p>
+                <div class="text-xs font-mono text-steel">
+                  <span class="font-semibold">{t.name}</span> · {t.title}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gold py-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-navy mb-4">We Are Booked. You Should Still Reach Out.</h2>
+      <p class="text-navy/70 mb-4 max-w-xl mx-auto">
+        McNadoes is committed through {nextAvailableQuarter}. We are not accepting standard intake. If you have a documented hardship, an emergency scope, or a genuinely compelling case, submit it. Steve McKay reviews these personally. He does not approve many of them.
+      </p>
+      <p class="text-navy/50 text-sm mb-8 max-w-lg mx-auto font-mono">
+        "Compelling" does not mean large budget. We have those already.
+      </p>
+      <a href="/hardship" class="inline-block px-10 py-4 bg-navy text-white font-bold text-base hover:bg-navy-bg transition-colors rounded-sm">
+        Submit a Hardship Inquiry
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

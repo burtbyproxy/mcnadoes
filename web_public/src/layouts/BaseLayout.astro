@@ -1,0 +1,178 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  canonicalPath?: string;
+}
+
+const {
+  title,
+  description = "McNadoes Corporation deploys AI-commanded tornadoes for debris removal, site excavation, demolition, and municipal services. Operational in seven states. Booked solid.",
+  ogImage = "/images/logos/logo-on-navy.png",
+  canonicalPath = Astro.url.pathname,
+} = Astro.props;
+
+const siteUrl = "https://www.mcnadoes.com";
+const canonical = `${siteUrl}${canonicalPath}`;
+const fullTitle = `${title} | McNadoes Corporation`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Primary -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="McNadoes Corporation" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "McNadoes Corporation",
+      "url": siteUrl,
+      "logo": `${siteUrl}/images/logos/logo-on-white.png`,
+      "description": "AI-commanded tornado deployment services for municipal, commercial, and agricultural applications.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Wichita",
+        "addressRegion": "KS",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Kansas","Oklahoma","Nebraska","Missouri","Iowa","Texas","South Dakota"],
+      "foundingDate": "2019",
+      "founder": {
+        "@type": "Person",
+        "name": "Steve McKay",
+        "jobTitle": "Founder, CEO & Chief Atmospheric Officer",
+        "alumniOf": ["University of North Texas", "University of Phoenix"],
+        "hasCredential": ["IBM Call for Code Winner", "US Patent US11012472B2", "US Patent US10771493"],
+        "description": "20-year IBM veteran. Chief Architect IBM Security Services. Five US patents. IBM Call for Code winner. Architect of RadioGPT and the world's first AI-automated emergency alert system."
+      }
+    })} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="bg-navy-bg text-white">
+      <div class="border-b border-gold/20 bg-navy-bg">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center text-xs text-mist/60 font-mono">
+          <span>MCNADOES CORPORATION · WICHITA, KS · EST. 2019</span>
+          <a href="/client-portal" class="text-gold hover:text-gold-light transition-colors">CLIENT PORTAL LOGIN</a>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 pb-4 flex items-center justify-between">
+        <a href="/" class="no-underline" style="width:280px;height:160px;position:relative;overflow:hidden;display:flex;align-items:center;">
+          <img
+            src="/images/logos/logo-on-navy.png"
+            alt="McNadoes Corporation"
+            class="w-auto"
+            style="position:relative;top:8px;"
+          />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="/services" class="px-4 py-2 text-sm font-semibold text-mist/80 hover:text-white hover:bg-white/5 rounded-sm transition-colors">Services</a>
+          <a href="/industries" class="px-4 py-2 text-sm font-semibold text-mist/80 hover:text-white hover:bg-white/5 rounded-sm transition-colors">Industries</a>
+          <a href="/will-not" class="px-4 py-2 text-sm font-semibold text-mist/80 hover:text-white hover:bg-white/5 rounded-sm transition-colors">Policy</a>
+          <a href="/about" class="px-4 py-2 text-sm font-semibold text-mist/80 hover:text-white hover:bg-white/5 rounded-sm transition-colors">About</a>
+          <a href="/contact" class="ml-4 px-5 py-2 text-sm font-bold bg-gold text-navy hover:bg-gold-light transition-colors rounded-sm">
+            Request a Quote
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-navy text-white mt-auto">
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+          <div>
+            <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Services</div>
+            <ul class="space-y-2 text-sm text-mist/60">
+              <li><a href="/services/debris-removal" class="hover:text-white transition-colors no-underline">Debris Removal</a></li>
+              <li><a href="/services/site-excavation" class="hover:text-white transition-colors no-underline">Site Excavation</a></li>
+              <li><a href="/services/atmospheric-logistics" class="hover:text-white transition-colors no-underline">Atmospheric Logistics</a></li>
+              <li><a href="/services/municipal-contracts" class="hover:text-white transition-colors no-underline">Municipal Contracts</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Industries</div>
+            <ul class="space-y-2 text-sm text-mist/60">
+              <li><a href="/industries" class="hover:text-white transition-colors no-underline">Agriculture</a></li>
+              <li><a href="/industries" class="hover:text-white transition-colors no-underline">Construction</a></li>
+              <li><a href="/industries" class="hover:text-white transition-colors no-underline">Municipal Government</a></li>
+              <li><a href="/industries" class="hover:text-white transition-colors no-underline">Insurance</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Company</div>
+            <ul class="space-y-2 text-sm text-mist/60">
+              <li><a href="/about" class="hover:text-white transition-colors no-underline">About McNadoes</a></li>
+              <li><a href="/about#leadership" class="hover:text-white transition-colors no-underline">Leadership</a></li>
+              <li><a href="/ai-powered-emergency-alert-system" class="hover:text-white transition-colors no-underline">The Florida Record</a></li>
+              <li><a href="/will-not" class="hover:text-white transition-colors no-underline">Use Policy</a></li>
+              <li><a href="/contact" class="hover:text-white transition-colors no-underline">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Client Access</div>
+            <ul class="space-y-2 text-sm text-mist/60">
+              <li><a href="/client-portal" class="hover:text-white transition-colors no-underline">Client Portal</a></li>
+              <li><a href="/contact" class="hover:text-white transition-colors no-underline">Request a Quote</a></li>
+              <li><a href="/ef-upgrade" class="hover:text-white transition-colors no-underline">EF Upgrade Request</a></li>
+              <li><a href="/incident-report" class="hover:text-white transition-colors no-underline">Incident Report</a></li>
+              <li><a href="/contact#support" class="hover:text-white transition-colors no-underline">Support</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-6 space-y-4">
+          <p class="text-xs text-mist/30 font-mono leading-relaxed max-w-3xl">
+            McNadoes is a satirical tribute site with no affiliation to the real Steve McKay. The real Steve McKay is a 20-year IBM veteran, IBM Call for Code winner, patent holder in cognitive security, and the architect of RadioGPT and the world's first AI-automated emergency alert system. He once tried to chase a tornado on foot. This site was made by people who worked with him and admire him. He commands tornadoes now. Things worked out.
+          </p>
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="text-xs text-mist/40 font-mono">
+              © {new Date().getFullYear()} McNadoes Corporation. All rights reserved. Tornado deployment subject to atmospheric availability and applicable federal airspace regulations.
+            </div>
+            <div class="text-xs text-mist/40 font-mono">
+              WICHITA · KANSAS CITY · TULSA · OKLAHOMA CITY
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

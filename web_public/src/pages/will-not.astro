@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const prohibited = [
+  {
+    category: "Residential Applications",
+    items: [
+      {
+        title: "Leaf Blowing",
+        detail: "We have been asked about this more than once. The answer has not changed."
+      },
+      {
+        title: "Pool Draining",
+        detail: "A tornado is not a pump. We understand the appeal. The answer is no."
+      },
+      {
+        title: "Moving Assistance",
+        detail: "Effective, certainly. Practical, no. Your belongings have not been insured for this."
+      },
+      {
+        title: "Landscaping",
+        detail: "McNadoes does not offer topiary services, sod removal, or what one prospective client described as 'aggressive aeration.' We've logged this three times."
+      },
+    ]
+  },
+  {
+    category: "Commercial & Industrial",
+    items: [
+      {
+        title: "Competitive Disruption",
+        detail: "McNadoes will not direct a tornado at a competitor's facility, job site, warehouse, parking lot, or signage. This has come up. The people who ask are not subtle about it."
+      },
+      {
+        title: "Parking Enforcement",
+        detail: "A municipality in western Kansas proposed a pilot program in 2022. We declined. The proposal was detailed and the enthusiasm was troubling."
+      },
+      {
+        title: "Drive-Through Expediting",
+        detail: "No."
+      },
+      {
+        title: "'Just a Little One' for Any Purpose",
+        detail: "There is no 'little one.' We appreciate the confidence in our precision, but atmospheric systems do not have a small setting."
+      },
+    ]
+  },
+  {
+    category: "Agricultural Misuse",
+    items: [
+      {
+        title: "Cattle Relocation",
+        detail: "We understand the math. The cattle do not consent to this arrangement and our insurance carrier has been very clear."
+      },
+      {
+        title: "Grain Mixing",
+        detail: "This was proposed by an actual grain elevator operator. The answer was, and remains, no."
+      },
+      {
+        title: "Irrigation (General)",
+        detail: "A tornado moves water in a direction that cannot be characterized as helpful to crops."
+      },
+    ]
+  },
+  {
+    category: "Event Services",
+    items: [
+      {
+        title: "Weddings",
+        detail: "We received four inquiries in 2023. This policy section was added in 2023."
+      },
+      {
+        title: "Graduation Parties",
+        detail: "See above. The demographic skews younger and the requests are more specific. This concerns us."
+      },
+      {
+        title: "Fireworks Enhancement",
+        detail: "The physics of this are exactly as bad as they sound."
+      },
+      {
+        title: "State Fair Attraction",
+        detail: "We explored this. The liability alone filled a three-ring binder. Two people asked if the tornado could wear a hat."
+      },
+    ]
+  },
+  {
+    category: "Government & Civic",
+    items: [
+      {
+        title: "Zoning Dispute Resolution",
+        detail: "We are aware this would be efficient. The answer is no, and the person who sent us a formal RFP for this knows who they are."
+      },
+      {
+        title: "Election Infrastructure of Any Kind",
+        detail: "This category requires no additional explanation and will not receive one."
+      },
+      {
+        title: "Property Line Arbitration",
+        detail: "Tornadoes do not recognize surveyor stakes. Neither do the courts, we have since learned."
+      },
+    ]
+  },
+  {
+    category: "Personal",
+    items: [
+      {
+        title: "Mother-in-Law Relocation",
+        detail: "This is the single most common personal inquiry we receive. The answer is no. We understand the situation. The answer is still no. We would ask that you stop describing it as a 'debris removal' job in the intake form, as this does not change the answer and has begun to affect morale."
+      },
+      {
+        title: "Revenge",
+        detail: "McNadoes does not offer revenge as a service category. If you believe you have a legitimate use case that merely resembles revenge, you are mistaken."
+      },
+      {
+        title: "Dramatic Effect for Social Media",
+        detail: "We've had three clients attempt to negotiate a 'brief pass' near their property for content purposes. The answer was no. The content would have been good. The answer is still no."
+      },
+      {
+        title: "Dog Grooming",
+        detail: "This was a joke in our original company brochure. We have since removed it because people kept calling about it."
+      },
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="McNadoes Use Policy | Things We Will Not Do With a Tornado"
+  description="The official and legally binding McNadoes list of prohibited tornado applications. Reviewed quarterly. Updated fourteen times. Some of it was court-ordered."
+>
+
+  <!-- Header -->
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Corporate Use Policy · Rev. 14</div>
+      <h1 class="text-4xl font-bold mb-4">Things McNadoes Will Not Do With a Tornado</h1>
+      <p class="text-mist/70 max-w-2xl leading-relaxed">
+        The following represents McNadoes Corporation's official and legally binding list of prohibited service applications. This document is reviewed quarterly and updated as necessary. It has been updated fourteen times. We find this number instructive.
+      </p>
+    </div>
+  </section>
+
+  <!-- Policy note -->
+  <div class="bg-gold/10 border-b border-gold/30">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex gap-4 items-start">
+      <div class="text-gold mt-0.5">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+      <p class="text-sm text-navy/80 font-mono">
+        <strong>Important:</strong> This policy applies to all prospective clients, existing clients, referral partners, county commissioners, state legislators, and any individual who has heard about McNadoes and thought, "I wonder if they would just..." — Yes, we have considered it. No, we will not.
+      </p>
+    </div>
+  </div>
+
+  <!-- Policy items -->
+  <section class="py-16 bg-offwhite">
+    <div class="max-w-5xl mx-auto px-6 space-y-12">
+      {prohibited.map(section => (
+        <div>
+          <h2 class="text-xs font-mono font-bold text-blue tracking-widest uppercase mb-5 pb-3 border-b border-mist">
+            {section.category}
+          </h2>
+          <div class="space-y-4">
+            {section.items.map(item => (
+              <div class="bg-white border border-mist p-5 rounded-sm flex gap-5">
+                <div class="flex-shrink-0 mt-0.5">
+                  <div class="w-5 h-5 rounded-full bg-danger/10 flex items-center justify-center">
+                    <svg class="w-3 h-3 text-danger" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-bold text-navy text-sm mb-1">{item.title}</h3>
+                  <p class="text-steel text-sm leading-relaxed">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Footer note -->
+  <section class="bg-navy text-white py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">A Note from Leadership</div>
+      <p class="text-mist/70 leading-relaxed max-w-3xl">
+        "We started this list because we thought it would be short. We were wrong about that. The list continues to grow because people continue to ask questions that require it to grow, and every single one of those people sounded completely serious. We respect that. We have to say no anyway. If you have a legitimate inquiry, we welcome it. We've probably heard it. The answer is probably no. But we welcome it."
+      </p>
+      <p class="text-mist/40 font-mono text-sm mt-4">— Steve McKay, Founder & CEO, McNadoes Corporation</p>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Municipal Contracts | McNadoes Tornado Services"
+  description="Annual and multi-year McNadoes service agreements for counties and municipalities. On-call tornado deployment, priority seasonal scheduling, dedicated account representative."
+  canonicalPath="/services/municipal-contracts"
+>
+
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Services / Municipal Contracts</div>
+      <h1 class="text-4xl font-bold mb-4">Municipal Contracts</h1>
+      <p class="text-mist/70 max-w-2xl leading-relaxed">
+        Annual and multi-year atmospheric service agreements for local government. Priority scheduling. Dedicated account rep. Seventeen county references available on request. We have done this enough times to know what municipalities actually need.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-blue text-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {[
+        ["17", "County References"],
+        ["4", "Active Municipal Contracts"],
+        ["Priority", "Seasonal Scheduling"],
+        ["1", "Dedicated Account Rep"],
+      ].map(([stat, label]) => (
+        <div>
+          <div class="text-2xl font-bold text-gold">{stat}</div>
+          <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">{label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-offwhite py-16">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-5 text-steel leading-relaxed">
+        <h2 class="text-2xl font-bold text-navy">What We Offer</h2>
+        <p>
+          McNadoes Municipal Contracts are annual or multi-year agreements that give counties and local government on-call access to tornado deployment services. Contracted municipalities receive priority scheduling during peak season — meaning when the rest of our client list is competing for a narrow atmospheric window, you are at the front of it.
+        </p>
+        <p>
+          Contracted clients receive a dedicated account representative. This is a specific person. You will know their name. They will know your county's topography, your typical project scope, and what you actually need when you call. We have found that municipalities prefer this to navigating an inquiry form every time they have a post-storm clearing requirement, and we agree.
+        </p>
+        <p>
+          Contract pricing reflects the ongoing nature of the relationship. Volume and multi-year terms are structured into the rate accordingly. We do not publish rates. We propose them based on your county's historical project volume, geographic coverage area, and anticipated seasonal requirements.
+        </p>
+
+        <h2 class="text-2xl font-bold text-navy pt-4">What Municipalities Use McNadoes For</h2>
+        <ul class="space-y-2">
+          {[
+            "Post-storm debris clearing — parks, rights-of-way, public facilities",
+            "Seasonal land management for county-owned agricultural property",
+            "Demolition of condemned structures on municipal land",
+            "Site preparation for public works infrastructure projects",
+            "Emergency scope clearing when conventional resources are unavailable",
+          ].map(item => (
+            <li class="flex gap-3">
+              <span class="text-gold mt-1 flex-shrink-0">✓</span>
+              <span class="text-sm">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 class="text-2xl font-bold text-navy pt-4">References</h2>
+        <p>
+          Seventeen county agricultural and public works departments have contracted with McNadoes and are willing to discuss their experience. We do not publish this list publicly because several of those county commissioners have asked us to let them do the recommending on their own terms. If you request references during your inquiry process, we will provide relevant contacts for your region and project type.
+        </p>
+        <p>
+          None of these references will describe the experience as normal. All of them will describe it as effective.
+        </p>
+      </div>
+
+      <div class="space-y-5">
+        <div class="bg-navy text-white p-5 rounded-sm">
+          <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Contract Terms</div>
+          <div class="space-y-3 text-xs">
+            {[
+              ["Term length", "Annual or multi-year"],
+              ["Scheduling", "Priority status"],
+              ["Account rep", "Dedicated contact"],
+              ["Rate structure", "Volume-based"],
+              ["Quarterly reports", "Included"],
+              ["References", "Available on request"],
+              ["Procurement", "RFP-compatible"],
+            ].map(([label, value]) => (
+              <div class="flex justify-between gap-4">
+                <span class="text-mist/50 font-mono">{label}</span>
+                <span class="text-mist font-mono text-right">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-gold/10 border border-gold/30 p-4 rounded-sm text-xs font-mono text-navy/70 leading-relaxed">
+          Municipal procurement officers: McNadoes is RFP-compatible. We have responded to formal procurement processes before. We are aware of what a sole-source justification looks like and can assist with the documentation.
+        </div>
+
+        <a href="/contact" class="block bg-blue text-white text-center py-3 px-5 font-bold hover:bg-blue-light transition-colors rounded-sm text-sm">
+          Submit a Municipal Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy text-white py-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold">View the full service catalog.</p>
+        <p class="text-mist/60 text-sm mt-1">Six core service lines across municipal, commercial, and agricultural applications.</p>
+      </div>
+      <a href="/services" class="px-6 py-3 border border-gold text-gold font-bold hover:bg-gold hover:text-navy transition-colors rounded-sm flex-shrink-0 text-sm">
+        All Services →
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

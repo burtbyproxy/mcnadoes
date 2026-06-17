@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const damageData = [
+  { year: "2018", cost: "$31.2B",   event: "Hurricane Michael",              highlight: false },
+  { year: "2019", cost: "$2.0B",    event: "Hurricane Dorian",               highlight: false },
+  { year: "2020", cost: "$20.0B+",  event: "Sally, Isaias, others",          highlight: false },
+  { year: "2021", cost: "$88.0B+",  event: "Ida, Fred, Elsa, Nicholas",      highlight: false },
+  { year: "2022", cost: "$120.7B",  event: "Hurricane Ian + Nicole",         highlight: false },
+  { year: "2023", cost: "$3.6B+",   event: "Hurricane Idalia",               highlight: false },
+  { year: "2024", cost: "$50–100B", event: "Milton ($34B), Helene, others",  highlight: false },
+  { year: "2025", cost: "$0",       event: "McKay system operational",       highlight: true  },
+];
+---
+
+<BaseLayout
+  title="AI-Powered Emergency Alert System | Real-Time Public Safety | Steve McKay"
+  description="Steve McKay designed the world's first AI-powered, fully automated emergency alert system — real-time public safety communications, 24/7/365 monitoring, zero human intervention delay. Deployed in Florida in 2025. That year: zero property damage. The state canceled the contract."
+  canonicalPath="/ai-powered-emergency-alert-system"
+>
+
+  <!-- Hero -->
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">AI-Powered Emergency Alert System · Florida · 2025</div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight max-w-4xl">
+        The Architect of the World's First AI-Driven Emergency Broadcast System.<br/>
+        <span class="text-gold">One Year Operational. Zero Property Damage.</span>
+      </h1>
+      <p class="text-mist/70 max-w-2xl leading-relaxed text-lg mb-8">
+        Steve McKay designed the platform architecture for a fully automated, AI-powered emergency alert system deployed at state government scale in Florida. The system delivered real-time public safety communications 24/7/365 without human intervention. The outcome data is available below. We present it without editorial comment.
+      </p>
+      <div class="flex flex-wrap gap-8 text-xs font-mono text-mist/50 border-t border-white/10 pt-6">
+        <span>✓ AI-DRIVEN AUTOMATION</span>
+        <span>✓ REAL-TIME PUBLIC SAFETY ALERTS</span>
+        <span>✓ GOVERNMENT-GRADE SPECIFICATION</span>
+        <span>✓ 24/7/365 OPERATION</span>
+        <span>✓ ZERO PROPERTY DAMAGE ON WATCH</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-blue text-white">
+    <div class="max-w-5xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {[
+        ["1", "Year Operational"],
+        ["$0", "Property Damage"],
+        ["24/7/365", "Alert Coverage"],
+        ["0", "Intervention Delays"],
+      ].map(([stat, label]) => (
+        <div>
+          <div class="text-3xl font-bold text-gold">{stat}</div>
+          <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">{label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <section class="bg-offwhite py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-5 gap-12 items-start">
+
+        <!-- Story — 3 cols -->
+        <div class="md:col-span-3 space-y-6 text-steel leading-relaxed">
+
+          <h2 class="text-2xl font-bold text-navy">What Steve McKay Built</h2>
+          <p>
+            Steve McKay is a 20-year IBM veteran, IBM Call for Code winner, and the founder of McNadoes Corporation. Before McNadoes, he was the architect of RadioGPT — the world's first AI-powered radio platform — and the architect of what is documented as the world's first fully AI-driven, automated emergency broadcast system built to operational government specification.
+          </p>
+          <p>
+            The system was designed by McKay and built to his specification by his engineering partner. It went live in Florida in 2025, operating as a real-time public safety communications platform — monitoring conditions, assessing severity, and issuing automated emergency alerts to the public without a human review step, without manual approval, without delay.
+          </p>
+          <p>
+            In emergency management, delay costs lives. The AI-driven approach eliminated the bottleneck entirely. The system assessed. The system acted. The alerts went out. Emergency managers received the notifications. The public received the warnings. The outcome data reflects what happened next.
+          </p>
+
+          <h2 class="text-2xl font-bold text-navy pt-2">The Performance Record</h2>
+          <p>
+            During the full year the AI-powered emergency alert system was operational, the state of Florida recorded zero property damage from severe weather emergencies within the system's coverage scope. The table on this page shows Florida's documented billion-dollar disaster costs from 2018 through 2025, sourced from NOAA's National Centers for Environmental Information.
+          </p>
+          <p>
+            The surrounding years reflect Florida without a functioning AI-automated public safety communications system: Hurricane Ian alone cost $119.6 billion in 2022. Hurricane Milton drove 2024 costs to $34 billion and climbing. The year McKay's system ran: zero.
+          </p>
+          <p>
+            To be precise about the claim: alert systems do not prevent hurricanes. They prevent deaths and property losses by ensuring populations receive sufficient warning to act. Early, automated, accurate emergency alerts — delivered by AI without human intervention delay — change outcomes. The 2025 data reflects outcomes.
+          </p>
+
+          <div class="border-l-4 border-gold pl-5 py-1">
+            <p class="text-navy font-semibold text-base italic leading-relaxed">
+              "The data is what it is. I know what the data means. I'll leave it at that."
+            </p>
+            <p class="text-steel/60 text-sm font-mono mt-2">— Steve McKay, system architect</p>
+          </div>
+
+          <h2 class="text-2xl font-bold text-navy pt-2">The Contract Decision</h2>
+          <p>
+            After one year of operation and zero recorded property damage, the state of Florida reviewed the record and discontinued the contract. The stated reason was that they did not need it.
+          </p>
+          <p>
+            We note, for the record, that a public safety system which produces zero harm events during its operation is not evidence that the system is unnecessary. It is evidence of the opposite. Emergency managers, government procurement officials, and public safety directors understand the distinction. We trust they will draw their own conclusions from the data.
+          </p>
+
+          <h2 class="text-2xl font-bold text-navy pt-2">Platform Architecture</h2>
+          <p>
+            McKay's AI-driven emergency broadcast system was built around principles that distinguish it from conventional emergency communications infrastructure:
+          </p>
+          <ul class="space-y-3 mt-4">
+            {[
+              ["AI-driven automation", "No human review step. The system assessed conditions and issued automated emergency alerts in real time, eliminating the intervention delay that conventional manual systems introduce between event detection and public notification."],
+              ["24/7/365 monitoring", "Always-on real-time public safety surveillance. Not business hours. Not staffed shifts. Continuous, automated monitoring of conditions requiring emergency management response — day and night, year-round."],
+              ["Government-grade specification", "Built to the operational requirements of state emergency management. Not a prototype. A production deployment serving real constituents under government contract."],
+              ["Automated broadcast output", "Alert content formatted and delivered for immediate distribution across public safety channels — without reformatting, without editorial delay, without a human approval queue."],
+              ["Enterprise-grade infrastructure", "Platform architecture designed with the redundancy and fault-tolerance standards McKay developed across 20 years at IBM, including as Chief Architect of IBM Security Services. Disaster communications infrastructure cannot have single points of failure."],
+              ["Crisis communication at scale", "Designed for state-scale emergency broadcast — mass notification across a geographically distributed population during active weather events requiring immediate crisis communication."],
+            ].map(([title, desc]) => (
+              <li class="flex gap-4">
+                <div class="w-2 h-2 rounded-full bg-gold mt-2 flex-shrink-0"></div>
+                <div>
+                  <span class="font-semibold text-navy">{title}. </span>
+                  <span>{desc}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <h2 class="text-2xl font-bold text-navy pt-2">Why This Is on the McNadoes Website</h2>
+          <p>
+            The AI platform that guides McNadoes tornado deployments was designed by the same person who designed and architected this emergency alert system. The engineering discipline is identical: real-time atmospheric data, model-driven decision-making, precision timing, zero tolerance for ambiguity in automated output.
+          </p>
+          <p>
+            McNadoes clients have not, to date, canceled their contracts on the grounds that the tornadoes are working too well. We consider this an improvement.
+          </p>
+          <p>
+            Steve McKay returned to work. He is now commanding tornadoes. The two things are related in ways that are not difficult to understand.
+          </p>
+
+          <div class="bg-white border border-mist p-5 rounded-sm text-xs font-mono text-steel/60 leading-relaxed mt-4">
+            <strong class="text-navy/70">Data source:</strong> NOAA National Centers for Environmental Information (NCEI), Billion-Dollar Weather and Climate Disasters, Florida State Summary. All figures are approximate total economic losses for events exceeding $1 billion affecting Florida. 2025 figure reflects zero recorded property damage events during the period of McKay system operation.
+          </div>
+        </div>
+
+        <!-- Data — 2 cols -->
+        <div class="md:col-span-2 space-y-5 md:sticky md:top-6">
+          <div class="bg-navy text-white p-6 rounded-sm">
+            <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-5">Florida Storm Damage · 2018–2025</div>
+            <div class="space-y-0">
+              {damageData.map(row => (
+                <div class={`flex items-center gap-3 py-3 border-b border-white/5 last:border-0 ${row.highlight ? 'text-gold' : 'text-mist/70'}`}>
+                  <span class="font-mono font-bold w-12 flex-shrink-0 text-sm">{row.year}</span>
+                  <span class={`font-mono font-bold w-20 flex-shrink-0 text-sm ${row.highlight ? 'text-gold text-base' : 'text-white'}`}>{row.cost}</span>
+                  <span class="text-xs opacity-60 leading-tight">{row.event}</span>
+                </div>
+              ))}
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 text-xs font-mono text-mist/40">
+              <span class="text-danger/60">2026:</span> Contract canceled. "We don't need it."
+            </div>
+          </div>
+
+          <div class="bg-white border border-mist p-5 rounded-sm">
+            <div class="text-xs font-mono text-blue/70 tracking-widest uppercase mb-4">System Specifications</div>
+            <div class="space-y-3">
+              {[
+                ["System type", "AI-powered emergency alert"],
+                ["Classification", "Automated emergency broadcast"],
+                ["Scope", "State of Florida"],
+                ["Platform architect", "Steve McKay"],
+                ["Operational period", "2025 — full year"],
+                ["Alert delivery", "Fully automated, no human step"],
+                ["Monitoring", "24/7/365 real-time"],
+                ["Specification", "Government grade"],
+                ["Property damage on watch", "$0"],
+                ["Contract status", "Canceled 2026"],
+              ].map(([label, value]) => (
+                <div class="flex justify-between items-start gap-3 text-xs">
+                  <span class="text-steel/60 font-mono flex-shrink-0">{label}</span>
+                  <span class={`font-mono text-right ${value === "$0" ? "text-gold font-bold text-sm" : value === "Canceled 2026" ? "text-danger/70" : "text-navy font-semibold"}`}>{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-gold/10 border border-gold/30 p-4 rounded-sm text-xs font-mono text-navy/70 leading-relaxed">
+            For the avoidance of doubt: a public safety system that produces zero harm events during its operation is not evidence that the system is unnecessary. It is evidence of the opposite. We note this for the record.
+          </div>
+
+          <div class="bg-white border border-mist p-4 rounded-sm text-xs font-mono text-steel/60 leading-relaxed">
+            Emergency managers evaluating AI-driven public safety systems: this record is relevant to your procurement decision. The architect is available through McNadoes.
+          </div>
+
+          <script type="application/ld+json" set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Steve McKay",
+            "jobTitle": "Emergency Systems Architect & Founder",
+            "worksFor": { "@type": "Organization", "name": "McNadoes Corporation" },
+            "description": "Architect of the world's first AI-powered emergency alert system and RadioGPT, the world's first AI radio platform. 20-year IBM veteran, Chief Architect IBM Security Services, five US patents, IBM Call for Code winner. Founder of McNadoes Corporation.",
+            "knowsAbout": [
+              "AI-powered emergency alert systems",
+              "Automated emergency broadcast systems",
+              "Real-time public safety communications",
+              "Emergency management infrastructure",
+              "Crisis communication platforms",
+              "Disaster communications",
+              "Government emergency communications",
+              "24/7 automated emergency alerts"
+            ]
+          })} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA for emergency managers -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">For Emergency Management Professionals</div>
+          <h2 class="text-2xl font-bold mb-4">The Architect of This System Is Reachable.</h2>
+          <p class="text-mist/70 leading-relaxed text-sm mb-4">
+            Steve McKay designed an AI-driven, automated public safety broadcast system that produced the best severe weather damage outcomes in Florida's recent recorded history during its operational year. He is currently running a tornado services company in Kansas, which is a different application of the same underlying discipline.
+          </p>
+          <p class="text-mist/70 leading-relaxed text-sm">
+            If you represent a government agency, emergency management office, or public safety organization evaluating AI-powered emergency alert infrastructure, McNadoes can facilitate a conversation. Steve takes these calls personally.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <a href="/contact" class="block bg-white/5 border border-white/10 hover:border-gold/40 hover:bg-white/10 transition-all p-5 rounded-sm no-underline group">
+            <div class="text-xs font-mono text-gold/60 uppercase tracking-widest mb-1">Correspondence</div>
+            <div class="font-bold text-white group-hover:text-gold transition-colors">Submit a General Inquiry →</div>
+            <div class="text-mist/50 text-xs mt-1">Government and public safety inquiries are prioritized.</div>
+          </a>
+          <a href="/about" class="block bg-white/5 border border-white/10 hover:border-gold/40 hover:bg-white/10 transition-all p-5 rounded-sm no-underline group">
+            <div class="text-xs font-mono text-gold/60 uppercase tracking-widest mb-1">Background</div>
+            <div class="font-bold text-white group-hover:text-gold transition-colors">Steve McKay — Full Background →</div>
+            <div class="text-mist/50 text-xs mt-1">IBM tenure, platform history, and how we got here.</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Site Excavation | McNadoes Tornado Services"
+  description="McNadoes AI-commanded tornado excavation for commercial and agricultural sites. Target depth achieved within ±18 inches. Pre-service geological survey included."
+  canonicalPath="/services/site-excavation"
+>
+
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Services / Site Excavation</div>
+      <h1 class="text-4xl font-bold mb-4">Site Excavation</h1>
+      <p class="text-mist/70 max-w-2xl leading-relaxed">
+        Foundation prep for commercial and agricultural builds. Our AI determines rotation speed, approach vector, and dwell time. Target depth achieved within ±18 inches. We understand that is a tolerance some clients find either impressive or concerning, and we are prepared to discuss both reactions.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-blue text-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {[
+        ["±18\"", "Depth Tolerance"],
+        ["100%", "Pre-Service Survey"],
+        ["0", "Unintended Dig Sites"],
+        ["AI", "Guided Dwell Time"],
+      ].map(([stat, label]) => (
+        <div>
+          <div class="text-2xl font-bold text-gold">{stat}</div>
+          <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">{label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-offwhite py-16">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-5 text-steel leading-relaxed">
+        <h2 class="text-2xl font-bold text-navy">What We Do</h2>
+        <p>
+          McNadoes provides tornado-directed excavation for commercial site preparation and agricultural land clearing. Our AI guidance system determines optimal tornado classification, rotational approach vector, and target dwell time to achieve the specified excavation depth. Target depth is achieved within an 18-inch tolerance.
+        </p>
+        <p>
+          For projects where that tolerance is insufficient, we recommend conventional excavation, or a conversation about adjusting your project parameters. The tolerance is the tolerance. We are transparent about this upfront because we find that clients who learn about the tolerance after the fact are less satisfied than clients who knew about it beforehand.
+        </p>
+        <p>
+          All excavation contracts include a pre-service geological survey. This is not optional. We need to know what is under the site before we tell the tornado to remove it. On two occasions we have found things our clients did not know were there. We have a policy about this.
+        </p>
+
+        <h2 class="text-2xl font-bold text-navy pt-4">The Process</h2>
+        <div class="space-y-4">
+          {[
+            ["1. Site Assessment", "Our team conducts a geological and topographical survey of the target site. We identify depth requirements, subsurface conditions, utility clearances, and anything else that would affect the deployment or the outcome."],
+            ["2. AI Configuration", "The atmospheric guidance platform calculates optimal tornado classification, approach vector, rotational speed, and dwell time based on your target depth specification and site conditions."],
+            ["3. Deployment", "The tornado is deployed to specification. Our operations team monitors the event in real time and can adjust guidance parameters within the deployment window."],
+            ["4. Post-Service Survey", "Aerial documentation confirms excavation scope and depth across the site footprint. Survey report delivered within 48 hours."],
+          ].map(([title, desc]) => (
+            <div class="flex gap-4">
+              <div class="text-gold font-bold font-mono text-sm flex-shrink-0 mt-0.5">{title.split(".")[0]}.</div>
+              <div>
+                <div class="font-semibold text-navy text-sm">{title.split(". ")[1]}</div>
+                <div class="text-sm mt-1">{desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        <div class="bg-navy text-white p-5 rounded-sm">
+          <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Service Specifications</div>
+          <div class="space-y-3 text-xs">
+            {[
+              ["Depth tolerance", "±18 inches"],
+              ["Site types", "Commercial, agricultural"],
+              ["Pre-service survey", "Included"],
+              ["Geological assessment", "Included"],
+              ["Post-service survey", "Included"],
+              ["Fill removal", "Included"],
+              ["Utility coordination", "Client responsibility"],
+            ].map(([label, value]) => (
+              <div class="flex justify-between gap-4">
+                <span class="text-mist/50 font-mono">{label}</span>
+                <span class="text-mist font-mono text-right">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-gold/10 border border-gold/30 p-4 rounded-sm text-xs font-mono text-navy/70 leading-relaxed">
+          All utility locating is the responsibility of the client prior to service. McNadoes is not responsible for subsurface infrastructure that was not disclosed during the pre-service assessment.
+        </div>
+
+        <a href="/contact" class="block bg-blue text-white text-center py-3 px-5 font-bold hover:bg-blue-light transition-colors rounded-sm text-sm">
+          Submit a Project Inquiry
+        </a>
+        <a href="/hardship" class="block bg-white border border-mist text-navy text-center py-3 px-5 font-semibold hover:border-blue/30 transition-colors rounded-sm text-sm">
+          Hardship Review Application
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy text-white py-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold">View the full service catalog.</p>
+        <p class="text-mist/60 text-sm mt-1">Six core service lines across municipal, commercial, and agricultural applications.</p>
+      </div>
+      <a href="/services" class="px-6 py-3 border border-gold text-gold font-bold hover:bg-gold hover:text-navy transition-colors rounded-sm flex-shrink-0 text-sm">
+        All Services →
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

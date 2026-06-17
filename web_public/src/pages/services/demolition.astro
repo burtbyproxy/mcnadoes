@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Demolition Services | McNadoes Tornado Services"
+  description="Permitted structural removal via AI-commanded tornado. Residential and commercial structures. Faster than conventional implosion. Permitting support included. The building will be gone."
+  canonicalPath="/services/demolition"
+>
+
+  <section class="bg-navy-bg text-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-3">Services / Demolition</div>
+      <h1 class="text-4xl font-bold mb-4">Demolition Services</h1>
+      <p class="text-mist/70 max-w-2xl leading-relaxed">
+        Permitted structural removal for commercial and residential properties. We command a tornado to remove the structure. The building will be gone. We are very clear with clients about what that means before the contract is signed.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-blue text-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {[
+        ["100%", "Permits Supported"],
+        ["<1hr", "Avg. Structural Removal"],
+        ["Faster", "Than Implosion"],
+        ["0", "Pre-Clearance Explosives"],
+      ].map(([stat, label]) => (
+        <div>
+          <div class="text-2xl font-bold text-gold">{stat}</div>
+          <div class="text-xs font-mono text-white/70 mt-1 uppercase tracking-wide">{label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-offwhite py-16">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-5 text-steel leading-relaxed">
+        <h2 class="text-2xl font-bold text-navy">What We Do</h2>
+        <p>
+          McNadoes demolition services provide a permitted alternative to conventional implosion and mechanical demolition for derelict, condemned, or surplus structures. The process is thorough, requires less pre-clearance than explosive methods, and produces a site that most clients describe as "ready to work with."
+        </p>
+        <p>
+          Permitting support is included in all demolition contracts. We have done this enough times to understand the permitting process for structural removal across our service states. If your municipality has questions about the method of demolition, we can address those questions. We have a document prepared for this. It has been reviewed by our attorneys.
+        </p>
+        <p>
+          We want to be clear about what tornado demolition means for a structure: it is complete. There is no partial demolition option. There is no "take out the back half" application. If you are considering McNadoes for demolition, you should be certain that the structure needs to be entirely gone, because it will be entirely gone.
+        </p>
+        <p>
+          Clients who have accepted this clarity and moved forward have been satisfied with the result. The structure was gone. The timeline was faster than conventional alternatives. The site was documentable. We consider this a successful outcome and so do they.
+        </p>
+
+        <h2 class="text-2xl font-bold text-navy pt-4">Eligible Structures</h2>
+        <ul class="space-y-2">
+          {[
+            "Condemned residential structures",
+            "Derelict commercial buildings",
+            "Surplus or obsolete agricultural structures (barns, silos, outbuildings)",
+            "Industrial facilities slated for site redevelopment",
+            "Municipal structures requiring removal",
+          ].map(item => (
+            <li class="flex gap-3">
+              <span class="text-gold mt-1 flex-shrink-0">✓</span>
+              <span class="text-sm">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 class="text-2xl font-bold text-navy pt-4">Pre-Service Requirements</h2>
+        <ul class="space-y-2">
+          {[
+            "Confirmed permit or permit-in-progress documentation",
+            "Utility disconnection confirmation (gas, electric, water)",
+            "Hazardous material abatement certification (asbestos, lead, etc.)",
+            "Clear site perimeter — 500-foot exclusion zone minimum",
+            "Adjacent property notifications as required by local ordinance",
+          ].map(item => (
+            <li class="flex gap-3">
+              <span class="text-steel/60 mt-1 flex-shrink-0">→</span>
+              <span class="text-sm">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="space-y-5">
+        <div class="bg-navy text-white p-5 rounded-sm">
+          <div class="text-xs font-mono text-gold/70 tracking-widest uppercase mb-4">Service Specifications</div>
+          <div class="space-y-3 text-xs">
+            {[
+              ["Structure types", "Residential, commercial"],
+              ["Permitting support", "Included"],
+              ["Utility coordination", "Client pre-service"],
+              ["Hazmat abatement", "Client pre-service"],
+              ["Exclusion zone", "500 ft minimum"],
+              ["Post-service survey", "Included"],
+              ["Material salvage", "Pre-arranged only"],
+            ].map(([label, value]) => (
+              <div class="flex justify-between gap-4">
+                <span class="text-mist/50 font-mono">{label}</span>
+                <span class="text-mist font-mono text-right">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-gold/10 border border-gold/30 p-4 rounded-sm text-xs font-mono text-navy/70 leading-relaxed">
+          Salvage arrangements must be made and completed before service. Once McNadoes receives the deployment order, the structure removal is not interruptible.
+        </div>
+
+        <a href="/contact" class="block bg-blue text-white text-center py-3 px-5 font-bold hover:bg-blue-light transition-colors rounded-sm text-sm">
+          Submit a Demolition Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy text-white py-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold">View the full service catalog.</p>
+        <p class="text-mist/60 text-sm mt-1">Six core service lines across municipal, commercial, and agricultural applications.</p>
+      </div>
+      <a href="/services" class="px-6 py-3 border border-gold text-gold font-bold hover:bg-gold hover:text-navy transition-colors rounded-sm flex-shrink-0 text-sm">
+        All Services →
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
